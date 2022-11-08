@@ -1,0 +1,126 @@
+{
+    "layers": [
+        {
+            "title": "RPD_Buildings",
+            "id": "rpd-buildings",
+            "attributes": [
+                {
+                    "id": "fid",
+                    "name": "FID",
+                    "title": "FID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-id",
+                    "name": "BLDNG_ID",
+                    "title": "BLDNG_ID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-type",
+                    "name": "BLDNG_TYPE",
+                    "title": "BLDNG_TYPE",
+                    "visible": true
+                },
+                {
+                    "id": "address",
+                    "name": "ADDRESS",
+                    "title": "ADDRESS",
+                    "visible": true
+                },
+                {
+                    "id": "city-name",
+                    "name": "CITY_NAME",
+                    "title": "CITY_NAME",
+                    "visible": true
+                },
+                {
+                    "id": "latitude",
+                    "name": "LATITUDE",
+                    "title": "LATITUDE",
+                    "visible": true
+                },
+                {
+                    "id": "longitude",
+                    "name": "LONGITUDE",
+                    "title": "LONGITUDE",
+                    "visible": true
+                },
+                {
+                    "id": "fcode",
+                    "name": "FCODE",
+                    "title": "FCODE",
+                    "visible": true
+                },
+                {
+                    "id": "objectid",
+                    "name": "OBJECTID",
+                    "title": "OBJECTID",
+                    "visible": true
+                }
+            ],
+            "dataUrl": "./layers/rpd-buildings.geojson"
+        },
+        {
+            "title": "EVCS_Stalls",
+            "id": "evcs-stalls",
+            "attributes": [
+                {
+                    "id": "fid",
+                    "name": "FID",
+                    "title": "FID",
+                    "visible": true
+                },
+                {
+                    "id": "objectid",
+                    "name": "OBJECTID",
+                    "title": "OBJECTID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-id",
+                    "name": "BLDNG_ID",
+                    "title": "BLDNG_ID",
+                    "visible": true
+                },
+                {
+                    "id": "address",
+                    "name": "ADDRESS",
+                    "title": "ADDRESS",
+                    "visible": true
+                },
+                {
+                    "id": "city",
+                    "name": "CITY",
+                    "title": "CITY",
+                    "visible": true
+                },
+                {
+                    "id": "stall-type",
+                    "name": "STALL_TYPE",
+                    "title": "STALL_TYPE",
+                    "visible": true
+                },
+                {
+                    "id": "fleet-ev",
+                    "name": "FLEET_EV",
+                    "title": "FLEET_EV",
+                    "visible": true
+                },
+                {
+                    "id": "emvi-ev",
+                    "name": "EMVI_EV",
+                    "title": "EMVI_EV",
+                    "visible": true
+                },
+                {
+                    "id": "lastupdate",
+                    "name": "lastupdate",
+                    "title": "lastupdate",
+                    "visible": true
+                }
+            ],
+            "dataUrl": "./layers/evcs-stalls.geojson"
+        }
+    ]
+}

@@ -1,0 +1,631 @@
+{
+    "name": "smk-clean-bc",
+    "viewer": {
+        "type": "leaflet",
+        "location": {
+            "center": [
+                -124.76074218750001,
+                51.876490970614775
+            ],
+            "extent": [
+                -133.30810546875003,
+                46.9052455464292,
+                -116.21337890625001,
+                56.353077613860826
+            ],
+            "zoom": 6
+        },
+        "esriApiKey": "AAPK76c74716cd3a48e8890531e85899d7e5PgPuOwAWPdP5X5IeNFaf26eMbjVTlVlWQiE24Uc8uf-wzHUyC8Ux2UoZut_js5xV",
+        "baseMap": "Streets"
+    },
+    "layers": [
+        {
+            "type": "esri-feature",
+            "id": "EV_Stations_Canada",
+            "isVisible": true,
+            "title": "Electric Charging Stations in Canada",
+            "serviceUrl": "https://services.arcgis.com/zmLUiqh7X11gGV2d/arcgis/rest/services/alt_fuel_stations/FeatureServer/0",
+            "where": "state='BC'",
+            "attributes": [{
+                "id": "fuel_type_code",
+                "name": "Fuel_Type_Code",
+                "title": "Fuel_Type_Code",
+                "visible": true
+            }, {
+                "id": "station_name",
+                "name": "Station_Name",
+                "title": "Station_Name",
+                "visible": true
+            }, {
+                "id": "street_address",
+                "name": "Street_Address",
+                "title": "Street_Address",
+                "visible": true
+            }, {
+                "id": "intersection_directions",
+                "name": "Intersection_Directions",
+                "title": "Intersection_Directions",
+                "visible": true
+            }, {
+                "id": "city",
+                "name": "City",
+                "title": "City",
+                "visible": true
+            }, {
+                "id": "state",
+                "name": "State",
+                "title": "State",
+                "visible": true
+            }, {
+                "id": "zip",
+                "name": "ZIP",
+                "title": "ZIP",
+                "visible": true
+            }, {
+                "id": "plus4",
+                "name": "Plus4",
+                "title": "Plus4",
+                "visible": true
+            }, {
+                "id": "station_phone",
+                "name": "Station_Phone",
+                "title": "Station_Phone",
+                "visible": true
+            }, {
+                "id": "status_code",
+                "name": "Status_Code",
+                "title": "Status_Code",
+                "visible": true
+            }, {
+                "id": "expected_date",
+                "name": "Expected_Date",
+                "title": "Expected_Date",
+                "visible": true
+            }, {
+                "id": "groups_with_access_code",
+                "name": "Groups_With_Access_Code",
+                "title": "Groups_With_Access_Code",
+                "visible": true
+            }, {
+                "id": "access_days_time",
+                "name": "Access_Days_Time",
+                "title": "Access_Days_Time",
+                "visible": true
+            }, {
+                "id": "cards_accepted",
+                "name": "Cards_Accepted",
+                "title": "Cards_Accepted",
+                "visible": true
+            }, {
+                "id": "bd_blends",
+                "name": "BD_Blends",
+                "title": "BD_Blends",
+                "visible": true
+            }, {
+                "id": "ng_fill_type_code",
+                "name": "NG_Fill_Type_Code",
+                "title": "NG_Fill_Type_Code",
+                "visible": true
+            }, {
+                "id": "ng_psi",
+                "name": "NG_PSI",
+                "title": "NG_PSI",
+                "visible": true
+            }, {
+                "id": "ev_level1_evse_num",
+                "name": "EV_Level1_EVSE_Num",
+                "title": "EV_Level1_EVSE_Num",
+                "visible": true
+            }, {
+                "id": "ev_level2_evse_num",
+                "name": "EV_Level2_EVSE_Num",
+                "title": "EV_Level2_EVSE_Num",
+                "visible": true
+            }, {
+                "id": "ev_dc_fast_count",
+                "name": "EV_DC_Fast_Count",
+                "title": "EV_DC_Fast_Count",
+                "visible": true
+            }, {
+                "id": "ev_other_info",
+                "name": "EV_Other_Info",
+                "title": "EV_Other_Info",
+                "visible": true
+            }, {
+                "id": "ev_network",
+                "name": "EV_Network",
+                "title": "EV_Network",
+                "visible": true
+            }, {
+                "id": "ev_network_web",
+                "name": "EV_Network_Web",
+                "title": "EV_Network_Web",
+                "visible": true
+            }, {
+                "id": "geocode_status",
+                "name": "Geocode_Status",
+                "title": "Geocode_Status",
+                "visible": true
+            }, {
+                "id": "latitude",
+                "name": "Latitude",
+                "title": "Latitude",
+                "visible": true
+            }, {
+                "id": "longitude",
+                "name": "Longitude",
+                "title": "Longitude",
+                "visible": true
+            }, {
+                "id": "date_last_confirmed",
+                "name": "Date_Last_Confirmed",
+                "title": "Date_Last_Confirmed",
+                "visible": true
+            }, {
+                "id": "id",
+                "name": "ID",
+                "title": "ID",
+                "visible": true
+            }, {
+                "id": "updated_at",
+                "name": "Updated_At",
+                "title": "Updated_At",
+                "visible": true
+            }, {
+                "id": "owner_type_code",
+                "name": "Owner_Type_Code",
+                "title": "Owner_Type_Code",
+                "visible": true
+            }, {
+                "id": "federal_agency_id",
+                "name": "Federal_Agency_ID",
+                "title": "Federal_Agency_ID",
+                "visible": true
+            }, {
+                "id": "federal_agency_name",
+                "name": "Federal_Agency_Name",
+                "title": "Federal_Agency_Name",
+                "visible": true
+            }, {
+                "id": "open_date",
+                "name": "Open_Date",
+                "title": "Open_Date",
+                "visible": true
+            }, {
+                "id": "hydrogen_status_link",
+                "name": "Hydrogen_Status_Link",
+                "title": "Hydrogen_Status_Link",
+                "visible": true
+            }, {
+                "id": "ng_vehicle_class",
+                "name": "NG_Vehicle_Class",
+                "title": "NG_Vehicle_Class",
+                "visible": true
+            }, {
+                "id": "lpg_primary",
+                "name": "LPG_Primary",
+                "title": "LPG_Primary",
+                "visible": true
+            }, {
+                "id": "e85_blender_pump",
+                "name": "E85_Blender_Pump",
+                "title": "E85_Blender_Pump",
+                "visible": true
+            }, {
+                "id": "ev_connector_types",
+                "name": "EV_Connector_Types",
+                "title": "EV_Connector_Types",
+                "visible": true
+            }, {
+                "id": "country",
+                "name": "Country",
+                "title": "Country",
+                "visible": true
+            }, {
+                "id": "intersection_directions__french",
+                "name": "Intersection_Directions__French",
+                "title": "Intersection_Directions__French",
+                "visible": true
+            }, {
+                "id": "access_days_time__french_",
+                "name": "Access_Days_Time__French_",
+                "title": "Access_Days_Time__French_",
+                "visible": true
+            }, {
+                "id": "bd_blends__french_",
+                "name": "BD_Blends__French_",
+                "title": "BD_Blends__French_",
+                "visible": true
+            }, {
+                "id": "groups_with_access_code__french",
+                "name": "Groups_With_Access_Code__French",
+                "title": "Groups_With_Access_Code__French",
+                "visible": true
+            }, {
+                "id": "hydrogen_is_retail",
+                "name": "Hydrogen_Is_Retail",
+                "title": "Hydrogen_Is_Retail",
+                "visible": true
+            }, {
+                "id": "access_code",
+                "name": "Access_Code",
+                "title": "Access_Code",
+                "visible": true
+            }, {
+                "id": "access_detail_code",
+                "name": "Access_Detail_Code",
+                "title": "Access_Detail_Code",
+                "visible": true
+            }, {
+                "id": "federal_agency_code",
+                "name": "Federal_Agency_Code",
+                "title": "Federal_Agency_Code",
+                "visible": true
+            }, {
+                "id": "facility_type",
+                "name": "Facility_Type",
+                "title": "Facility_Type",
+                "visible": true
+            }, {
+                "id": "cng_dispenser_num",
+                "name": "CNG_Dispenser_Num",
+                "title": "CNG_Dispenser_Num",
+                "visible": true
+            }, {
+                "id": "cng_on_site_renewable_source",
+                "name": "CNG_On_Site_Renewable_Source",
+                "title": "CNG_On_Site_Renewable_Source",
+                "visible": true
+            }, {
+                "id": "cng_total_compression_capacity",
+                "name": "CNG_Total_Compression_Capacity",
+                "title": "CNG_Total_Compression_Capacity",
+                "visible": true
+            }, {
+                "id": "cng_storage_capacity",
+                "name": "CNG_Storage_Capacity",
+                "title": "CNG_Storage_Capacity",
+                "visible": true
+            }, {
+                "id": "lng_on_site_renewable_source",
+                "name": "LNG_On_Site_Renewable_Source",
+                "title": "LNG_On_Site_Renewable_Source",
+                "visible": true
+            }, {
+                "id": "e85_other_ethanol_blends",
+                "name": "E85_Other_Ethanol_Blends",
+                "title": "E85_Other_Ethanol_Blends",
+                "visible": true
+            }, {
+                "id": "ev_pricing",
+                "name": "EV_Pricing",
+                "title": "EV_Pricing",
+                "visible": true
+            }, {
+                "id": "ev_pricing__french_",
+                "name": "EV_Pricing__French_",
+                "title": "EV_Pricing__French_",
+                "visible": true
+            }, {
+                "id": "lpg_nozzle_types",
+                "name": "LPG_Nozzle_Types",
+                "title": "LPG_Nozzle_Types",
+                "visible": true
+            }, {
+                "id": "hydrogen_pressures",
+                "name": "Hydrogen_Pressures",
+                "title": "Hydrogen_Pressures",
+                "visible": true
+            }, {
+                "id": "hydrogen_standards",
+                "name": "Hydrogen_Standards",
+                "title": "Hydrogen_Standards",
+                "visible": true
+            }, {
+                "id": "cng_fill_type_code",
+                "name": "CNG_Fill_Type_Code",
+                "title": "CNG_Fill_Type_Code",
+                "visible": true
+            }, {
+                "id": "cng_psi",
+                "name": "CNG_PSI",
+                "title": "CNG_PSI",
+                "visible": true
+            }, {
+                "id": "cng_vehicle_class",
+                "name": "CNG_Vehicle_Class",
+                "title": "CNG_Vehicle_Class",
+                "visible": true
+            }, {
+                "id": "lng_vehicle_class",
+                "name": "LNG_Vehicle_Class",
+                "title": "LNG_Vehicle_Class",
+                "visible": true
+            }, {
+                "id": "ev_on_site_renewable_source",
+                "name": "EV_On_Site_Renewable_Source",
+                "title": "EV_On_Site_Renewable_Source",
+                "visible": true
+            }, {
+                "id": "restricted_access",
+                "name": "Restricted_Access",
+                "title": "Restricted_Access",
+                "visible": true
+            }, {
+                "id": "fid",
+                "name": "FID",
+                "title": "FID",
+                "visible": true
+            }]
+        },
+        {
+            "type": "vector",
+            "id": "rpd-buildings",
+            "title": "RPD_Buildings",
+            "isVisible": true,
+            "isQueryable": true,
+            "opacity": 0.65,
+            "minScale": null,
+            "maxScale": null,
+            "titleAttribute": null,
+            "attributes": [
+                {
+                    "id": "fid",
+                    "name": "FID",
+                    "title": "FID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-id",
+                    "name": "BLDNG_ID",
+                    "title": "BLDNG_ID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-type",
+                    "name": "BLDNG_TYPE",
+                    "title": "BLDNG_TYPE",
+                    "visible": true
+                },
+                {
+                    "id": "address",
+                    "name": "ADDRESS",
+                    "title": "ADDRESS",
+                    "visible": true
+                },
+                {
+                    "id": "city-name",
+                    "name": "CITY_NAME",
+                    "title": "CITY_NAME",
+                    "visible": true
+                },
+                {
+                    "id": "latitude",
+                    "name": "LATITUDE",
+                    "title": "LATITUDE",
+                    "visible": true
+                },
+                {
+                    "id": "longitude",
+                    "name": "LONGITUDE",
+                    "title": "LONGITUDE",
+                    "visible": true
+                },
+                {
+                    "id": "fcode",
+                    "name": "FCODE",
+                    "title": "FCODE",
+                    "visible": true
+                },
+                {
+                    "id": "objectid",
+                    "name": "OBJECTID",
+                    "title": "OBJECTID",
+                    "visible": true
+                }
+            ],
+            "queries": null,
+            "useClustering": false,
+            "dataUrl": "./layers/rpd-buildings.geojson",
+            "legend": {
+                "line": true
+            },
+            "style": {
+                "strokeColor": "#3388ff",
+                "strokeOpacity": 1,
+                "strokeWidth": 3,
+                "strokeCap": "round",
+                "strokeJoin": "round",
+                "fill": false,
+                "fillColor": "#3388ff",
+                "fillOpacity": 0.2
+            }
+        },
+        {
+            "type": "vector",
+            "id": "evcs-stalls",
+            "title": "EVCS_Stalls",
+            "isVisible": true,
+            "isQueryable": true,
+            "opacity": 0.65,
+            "minScale": null,
+            "maxScale": null,
+            "titleAttribute": null,
+            "attributes": [
+                {
+                    "id": "fid",
+                    "name": "FID",
+                    "title": "FID",
+                    "visible": true
+                },
+                {
+                    "id": "objectid",
+                    "name": "OBJECTID",
+                    "title": "OBJECTID",
+                    "visible": true
+                },
+                {
+                    "id": "bldng-id",
+                    "name": "BLDNG_ID",
+                    "title": "BLDNG_ID",
+                    "visible": true
+                },
+                {
+                    "id": "address",
+                    "name": "ADDRESS",
+                    "title": "ADDRESS",
+                    "visible": true
+                },
+                {
+                    "id": "city",
+                    "name": "CITY",
+                    "title": "CITY",
+                    "visible": true
+                },
+                {
+                    "id": "stall-type",
+                    "name": "STALL_TYPE",
+                    "title": "STALL_TYPE",
+                    "visible": true
+                },
+                {
+                    "id": "fleet-ev",
+                    "name": "FLEET_EV",
+                    "title": "FLEET_EV",
+                    "visible": true
+                },
+                {
+                    "id": "emvi-ev",
+                    "name": "EMVI_EV",
+                    "title": "EMVI_EV",
+                    "visible": true
+                },
+                {
+                    "id": "lastupdate",
+                    "name": "lastupdate",
+                    "title": "lastupdate",
+                    "visible": true
+                }
+            ],
+            "queries": null,
+            "useClustering": false,
+            "dataUrl": "./layers/evcs-stalls.geojson",
+            "legend": {
+                "line": true
+            },
+            "style": {
+                "strokeColor": "#3388ff",
+                "strokeOpacity": 1,
+                "strokeWidth": 3,
+                "strokeCap": "round",
+                "strokeJoin": "round",
+                "fill": false,
+                "fillColor": "#3388ff",
+                "fillOpacity": 0.2
+            }
+        }
+    ],
+    "tools": [
+        {
+            "type": "toolbar",
+            "enabled": true
+        },
+        {
+            "type": "list-menu",
+            "enabled": true,
+            "title": "Clean BC"
+        },
+        {
+            "type": "pan",
+            "enabled": true
+        },
+        {
+            "type": "zoom",
+            "enabled": true
+        },
+        {
+            "type": "about",
+            "enabled": true,
+            "title": "About Clean BC",
+            "position": "list-menu",
+            "content": "<p>Welcome to SMK!</p><p>A Simple Map Kit web application to assist Clean BC with routing to electric vehicle charging stations.</p>"
+        },
+        {
+            "type": "layers",
+            "enabled": true
+        },
+        {
+            "type": "baseMaps",
+            "enabled": false
+        },
+        {
+            "type": "identify",
+            "enabled": true,
+            "showPanel": true,
+            "showWidget": true,
+            "style": {
+                "strokeWidth": 1,
+                "strokeStyle": "1, 1",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0.8,
+                "fillColor": "#000000",
+                "fillOpacity": 0.5,
+                "markerSize": [
+                    20,
+                    20
+                ],
+                "markerOffset": [
+                    10,
+                    0
+                ]
+            }
+        },
+        {
+            "type": "search",
+            "enabled": true
+        },
+        {
+            "type": "coordinate",
+            "enabled": true
+        },
+        {
+            "type": "measure",
+            "enabled": false
+        },
+        {
+            "type": "markup",
+            "enabled": false
+        },
+        {
+            "type": "scale",
+            "enabled": false
+        },
+        {
+            "type": "minimap",
+            "enabled": false
+        },
+        {
+            "type": "directions",
+            "enabled": true
+        },
+        {
+            "type": "location",
+            "enabled": false
+        },
+        {
+            "type": "select",
+            "enabled": false
+        },
+        {
+            "type": "geomark",
+            "geomarkService": {
+                "url": "https://apps.gov.bc.ca/pub/geomark"
+            },
+            "position": "list-menu",
+            "enabled": false
+        }
+    ],
+    "version": "1.1.1",
+    "createdBy": "DataBC Map Team",
+    "createdDate": "2022-11-07T23:57:27.366Z"
+}
