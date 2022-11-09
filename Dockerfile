@@ -23,7 +23,7 @@ WORKDIR /srv
 # it does not create the directory
 ADD  assets /srv/assets
 ADD layers /srv/layers
-COPY ["index.html", "smk-config.json", "smk-init.js", "/srv/"]
+COPY ["index.html", "smk-config.json", "smk-init.js", "print-directions-portrait.html", "/srv/"]
 COPY --from=BUILD_IMAGE /srv/node_modules /srv/node_modules
 
 
