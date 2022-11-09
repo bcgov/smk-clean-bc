@@ -1,6 +1,6 @@
 SMK.INIT( {
     containerSel: '#smk-map-frame',
-    config: [ './smk-config.json', '?' ]
+    config: [ './smk-config.json', './config/route-planner.json', '?' ]
 } )
 .then( function ( smk ) {
     // SMK initialized
