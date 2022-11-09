@@ -429,7 +429,6 @@
         include.option( { baseUrl: ( new URL( './node_modules/@bcgov/smk/dist/assets/src/lib', document.location ) ).toString() } )
         include( 'vue', 'vue-config', 'turf' ).then( function () {
             var key = location.search.substr( 1 )
-            debugger;
             var cfg = JSON.parse( window.sessionStorage.getItem( key ) )
 
             var dirs = cfg.etc.directions
@@ -581,7 +580,6 @@
                 targetDist = d.route.dist
             } )
 
-            debugger;
             var model = {
                 waypoints: dirs.waypoints,
                 overview: {},
