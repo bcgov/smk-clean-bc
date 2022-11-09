@@ -12,50 +12,26 @@
                 },
                 {
                     "id": "bldng-id",
-                    "name": "BLDNG_ID",
-                    "title": "BLDNG_ID",
+                    "name": "Bldng_ID",
+                    "title": "Bldng_ID",
                     "visible": true
                 },
                 {
                     "id": "bldng-type",
-                    "name": "BLDNG_TYPE",
-                    "title": "BLDNG_TYPE",
+                    "name": "Bldng_Type",
+                    "title": "Bldng_Type",
                     "visible": true
                 },
                 {
                     "id": "address",
-                    "name": "ADDRESS",
-                    "title": "ADDRESS",
+                    "name": "Address",
+                    "title": "Address",
                     "visible": true
                 },
                 {
-                    "id": "city-name",
-                    "name": "CITY_NAME",
-                    "title": "CITY_NAME",
-                    "visible": true
-                },
-                {
-                    "id": "latitude",
-                    "name": "LATITUDE",
-                    "title": "LATITUDE",
-                    "visible": true
-                },
-                {
-                    "id": "longitude",
-                    "name": "LONGITUDE",
-                    "title": "LONGITUDE",
-                    "visible": true
-                },
-                {
-                    "id": "fcode",
-                    "name": "FCODE",
-                    "title": "FCODE",
-                    "visible": true
-                },
-                {
-                    "id": "objectid",
-                    "name": "OBJECTID",
-                    "title": "OBJECTID",
+                    "id": "city",
+                    "name": "City",
+                    "title": "City",
                     "visible": true
                 }
             ],
@@ -79,44 +55,38 @@
                 },
                 {
                     "id": "bldng-id",
-                    "name": "BLDNG_ID",
-                    "title": "BLDNG_ID",
+                    "name": "Bldng_ID",
+                    "title": "Bldng_ID",
                     "visible": true
                 },
                 {
                     "id": "address",
-                    "name": "ADDRESS",
-                    "title": "ADDRESS",
+                    "name": "Address",
+                    "title": "Address",
                     "visible": true
                 },
                 {
                     "id": "city",
-                    "name": "CITY",
-                    "title": "CITY",
+                    "name": "City",
+                    "title": "City",
                     "visible": true
                 },
                 {
                     "id": "stall-type",
-                    "name": "STALL_TYPE",
-                    "title": "STALL_TYPE",
+                    "name": "Stall_Type",
+                    "title": "Stall_Type",
                     "visible": true
                 },
                 {
                     "id": "fleet-ev",
-                    "name": "FLEET_EV",
-                    "title": "FLEET_EV",
+                    "name": "Fleet_EV",
+                    "title": "Fleet_EV",
                     "visible": true
                 },
                 {
                     "id": "emvi-ev",
-                    "name": "EMVI_EV",
-                    "title": "EMVI_EV",
-                    "visible": true
-                },
-                {
-                    "id": "lastupdate",
-                    "name": "lastupdate",
-                    "title": "lastupdate",
+                    "name": "EmVi_EV",
+                    "title": "EmVi_EV",
                     "visible": true
                 }
             ],

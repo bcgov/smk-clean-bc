@@ -4,10 +4,34 @@ SMK.INIT( {
 } )
 .then( function ( smk ) {
     // SMK initialized
-    // Code to add Electric Charging Stations in Canada layer
-    // const featureLayer = L.esri.featureLayer({
-    //     url: "https://services.arcgis.com/zmLUiqh7X11gGV2d/arcgis/rest/services/alt_fuel_stations/FeatureServer/0"
-    // });
-    // featureLayer.addTo(smk.$viewer.map);
+    window.L_DISABLE_3D = true;
+    SMK.HANDLER.set('DirectionsRouteTool', 'print', function(smk, tool, key, opt) {
+        if ( opt.debug ) {
+            window.open( 'print-directions-portrait.html?' + key, '', [
+                "location=yes",
+                "menubar=yes",
+                "titlebar=yes",
+                "status=yes",
+                "toolbar=yes",
+                "scrollbars=yes",
+            ].join( ',' ) );
+        }
+        else {
+            document.getElementById( 'print-holder' ).src = 'print-directions-portrait.html?' + key;
+        }
+        
+        return new Promise( function ( res, rej ) {
+            var handler = function ( ev ) {
+                console.log( ev );
+                if ( ev.data == 'printed' ) {
+                    res();
+                    window.removeEventListener( 'message', handler );
+                }
+            };
 
+            window.addEventListener( 'message', handler, false );
+
+            setTimeout( function () { rej( new Error( 'timeout' ) ) }, 30 * 1000 );
+        });
+    });
 } )
