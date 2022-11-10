@@ -68,6 +68,23 @@ jobs:
         PR_REVIEWERS: '["dgboss", "NicoledeGreef"]'
         PR_MENTIONS: '["dgboss", "NicoledeGreef"]'
 
-
+    # - name: update api key
+    #   uses: bcgov/smk-clean-bc/update-api-key
+    #   id: updateApiKey
+    #   with: 
+    #     OPENSHIFT_SERVER_URL: ${{secrets.OPENSHIFT_SERVER_URL}}
+    #     OPENSHIFT_TOKEN_DEV: ${{secrets.OPENSHIFT_TOKEN_DEV}}
+    #     OPENSHIFT_TOKEN_PROD: ${{secrets.OPENSHIFT_TOKEN_PROD}}
+    - name: Login to Dev Openshift
+      id: oc-login
+      shell: bash
+      run: |
+        echo ----- OC-LOGIN -----
+        # get oc client
+        curl https://downloads-openshift-console.apps.silver.devops.gov.bc.ca/amd64/linux/oc.tar -o oc.tar
+        tar -xvf oc.tar
+        curdir=$(pwd)
+        PATH=$curdir:$PATH
+        oc login --token=${{ inputs.OPENSHIFT_TOKEN_DEV }} --server=${{ inputs.OPENSHIFT_SERVER_URL }}
 
 
