@@ -85,4 +85,4 @@ jobs:
         tar -xvf oc.tar
         curdir=$(pwd)
         PATH=$curdir:$PATH
-        oc login --token=${{ env.OPENSHIFT_TOKEN_DEV }} --server=${{ env.OPENSHIFT_SERVER_URL }}
+        oc login --token=${{ OPENSHIFT_TOKEN_DEV }} --server=${{ OPENSHIFT_SERVER_URL }}
