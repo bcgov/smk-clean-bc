@@ -677,8 +677,7 @@
             "type": "directions",
             "enabled": true,
             "routePlannerService": {
-                "url": "https://router.api.gov.bc.ca/",
-                "apiKey": "11dd756f680c47b5aef5093d95543738"
+                "url": "https://router.api.gov.bc.ca/"
             },
             "geocoderService": {
                 "url": "https://geocoder.api.gov.bc.ca/",
