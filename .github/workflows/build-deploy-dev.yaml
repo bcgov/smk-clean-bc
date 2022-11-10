@@ -37,7 +37,6 @@ jobs:
       GHCR_USER: ${{ secrets.GHCR_USER }}
       GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
       DEBUG_DEPLOY: false
-      TEST: "chicken"
       
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -81,9 +80,9 @@ jobs:
       shell: bash
       run: |
         echo ----- OC-LOGIN -----
-        # echo $TEST
-        # echo ${{ TEST }}
-        # echo ${{ env.TEST }}
+        echo $OPENSHIFT_SERVER_URL
+        echo ${{ OPENSHIFT_SERVER_URL }}
+        echo ${{ env.OPENSHIFT_SERVER_URL }}
         # get oc client
         curl https://downloads-openshift-console.apps.silver.devops.gov.bc.ca/amd64/linux/oc.tar -o oc.tar
         tar -xvf oc.tar
