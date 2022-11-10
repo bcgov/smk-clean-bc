@@ -82,7 +82,6 @@ jobs:
       run: |
         echo ----- OC-LOGIN -----
         echo $TEST
-        echo TEST
         echo ${{ TEST }}
         echo ${{ env.TEST }}
         # get oc client
