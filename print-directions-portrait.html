@@ -46,13 +46,9 @@
                 align-items:        center;
             }
 
-            header .bc-logo {
+            header .logo {
                 filter: invert( 0% );
             } 
-
-            header .translink-logo {
-                filter: invert( 0% );
-            }
 
             .build-info {
                 display: flex;
@@ -254,9 +250,9 @@
             <div id="route-pages">
                 <article>
                     <header>
-                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="bc-logo">
-                        <img src="images/translink-logo-black.svg" alt="TransLink Logo" class="translink-logo">
-                        <div class="header-title">Truck Route Planner</div>
+                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="logo">
+                        <img src="images/CleanBC_logo.svg" alt="CleanBC Logo" class="logo">
+                        <div class="header-title">CleanBC Fleet Route Planner</div>
                         <div class="build-info"></div>
                     </header>
                         
@@ -292,9 +288,9 @@
                     v-for="page in pages"
                 >
                     <header>
-                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="bc-logo">
-                        <img src="images/translink-logo-black.svg" alt="TransLink Logo" class="translink-logo">
-                        <div class="header-title">Truck Route Planner</div>
+                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="logo">
+                        <img src="images/CleanBC_logo.svg" alt="CleanBC Logo" class="logo">
+                        <div class="header-title">CleanBC Fleet Route Planner</div>
                     </header>
                         
                     <div class="page">
@@ -348,77 +344,6 @@
                         </section>
                     </div>
                 </article>     
-
-                <article class="notifications">
-                    <header>
-                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="bc-logo">
-                        <img src="images/translink-logo-black.svg" alt="TransLink Logo" class="translink-logo">
-                        <div class="header-title">Truck Route Planner</div>
-                        <div class="build-info"></div>
-                    </header>
-
-                    <div class="page">
-                        <section>
-                            <h1>Reports and Notices</h1>
-
-                            <!-- <div class="notification" 
-                                v-for="r in reports"
-                                xxv-if="r.message"
-                                v-bind:class="[ r.type ]"
-                                v-bind:is="r.component"
-                                xxv-html="r.message"
-                            ></div> -->
-
-                            <div class="notification">
-                                <h2>Potential Route (Blue Line)</h2>
-                                A route that based on factors such as the origin and destination, intermediate waypoints, and the default or user-entered vehicle parameters, may comply with municipal truck route bylaws. 
-                                This route is put forward for the driver and/or carrier’s consideration for pre-trip planning purposes without warranty of any kind, whether express or implied. 
-                                The driver and/or carrier is responsible for ensuring the default vehicle parameters or user-entered vehicle parameters are an accurate representation of the actual vehicle, for verifying all clearances and restrictions on the route, and for ensuring the vehicle is operated in compliance with all applicable municipal bylaws and provincial and federal regulations.
-                            </div>
-
-                            <div class="notification">
-                                <h2>Unverified Route (Dotted Red Line)</h2>
-                                A route, or a portion of a route, that may not comply with municipal truck route bylaws and may not be suitable for a vehicle with the default or user-entered vehicle parameters. 
-                                The driver and/or carrier is responsible for ensuring the default vehicle parameters or user-entered vehicle parameters are an accurate representation of the actual vehicle, for verifying all clearances and restrictions on the route, and for ensuring the vehicle is operated in compliance with all applicable municipal bylaws and provincial and federal regulations.                        
-                            </div>
-                        </section>
-                    </div>
-                </article>     
-
-                <article class="disclaimer">
-                    <header>
-                        <img src="images/BCID_H_rgb_pos.png" alt="BC Logo" class="bc-logo">
-                        <img src="images/translink-logo-black.svg" alt="TransLink Logo" class="translink-logo">
-                        <div class="header-title">Truck Route Planner</div>
-                        <div class="build-info"></div>
-                    </header>
-
-                    <div class="page">
-                        <section>
-                            <h1>Disclosure and Limitation of Liabilities</h1>
-
-                            <p>
-                                This website (the Truck Route Planner (TRP)) and all of the information it contains are provided "as is" without warranty of any kind, whether express or implied.
-                                All implied warranties, including, without limitation, implied warranties of merchantability, fitness for a particular purpose, and non-infringement, are hereby expressly disclaimed.
-                            </p>
-                            <p>
-                                Links and references to any other websites are provided for information only and listing shall not be taken as endorsement of any kind.
-                                TransLink or any of its partners or stakeholders (including, without limitation, the Province of BC) are not responsible for the content or reliability of the linked websites and do not endorse the content, products, services or views expressed within them.
-                            </p>
-                            <p>    
-                                Under no circumstances will TransLink or any of its partners or stakeholders (including, without limitation, the Province of BC) be liable to any person or business entity for any direct, indirect, special, incidental, consequential, or other damage based on any use of this website or any other website to which this site is linked, including, without limitation, any lost profits, business interruption, or loss of programs or information, even if TransLink or any of its partners or stakeholders (including, without limitation, the Province of BC) have been specifically advised.
-                            </p>
-                            <p>
-                                TransLink and the Province of BC, in their sole discretion, may at any time without notice revise the content and features of this website and the terms and conditions of its use, or terminate this website at any time, for any reason, without any notice and without any liability to any person or business entity.
-                            </p>
-                            <img src="images/no_mobile_icon.svg" style="width: 150px;" alt="Graphic warning to discourage using mobile devices">
-                            <p>
-                                <em>This website is intended to be used as a pre-trip planner. Do not operate a vehicle while using this website.</em>
-                            </p>
-                        </section>
-                    </div>
-                </article>     
-
             </div>
         </template>
     </body>
