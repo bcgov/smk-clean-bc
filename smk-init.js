@@ -7,7 +7,7 @@ SMK.INIT( {
     window.L_DISABLE_3D = true;
 
     var dialog = document.getElementById( 'disclaimer' )
-    include( [ { url: './fragments/disclaimer.html' }, { url: './fragments/disclaimer.css' } ], 'disclaimer' ).then( function ( inc ) {
+    include( [ { url: './fragments/disclaimer.html' } ], 'disclaimer' ).then( function ( inc ) {
         dialog.innerHTML = inc[ 'disclaimer.disclaimer-html' ]
         dialogPolyfill.registerDialog(dialog)
         dialog.showModal()
