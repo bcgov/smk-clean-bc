@@ -706,6 +706,10 @@
             },
             "position": "list-menu",
             "enabled": false
+        },
+        {
+            "type": "legend",
+            "enabled": true
         }
     ],
     "version": "1.1.1",
