@@ -5,7 +5,7 @@
     "author": "DataBC Map Team",
     "dependencies": {
         "@bcgov/smk": "1.1.2",
-        "http-server": "^0.12.3"
+        "http-server": "^14.1.1"
     },
     "scripts": {
         "view": "http-server -o -c-1"
