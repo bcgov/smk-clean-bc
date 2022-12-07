@@ -585,11 +585,13 @@
             "enabled": true
         },
         {
-            "type": "about",
-            "enabled": true,
-            "title": "About Clean BC",
+            "order": 1,
             "position": "list-menu",
-            "content": "<p>Welcome to SMK!</p><p>A Simple Map Kit web application to assist Clean BC with routing to electric vehicle charging stations.</p>"
+            "icon": "help",
+            "title": "About Clean BC",
+            "content": "<p>The CleanBC Route Planner (CBRP) is intended to be an interactive, easy-to-understand trip-planning application for Fleet Vehicles within RPD. The web application's key features are the ability to see RPD properties and Ministry Electric Vehicle Charging Stations (EVCS), along with public charging stations and to plan your route accordingly. It is intended to augment, rather than replace, existing regional and municipal maps and trip planning tools.</p>",
+            "type": "about",
+            "enabled": true
         },
         {
             "order": 3,
@@ -709,6 +711,19 @@
         },
         {
             "type": "legend",
+            "enabled": true
+        },
+        {
+            "order": 1,
+            "position": "list-menu",
+            "icon": "help",
+            "title": "How to use the Route Planner",
+            "useComponent": true,
+            "component": {
+                "template": "<p>First, click on the Route Planner heading, enter an address or click directly on the map. Continue entering additional waypoints, which you can click and drag to update your route, or the start and end points. You can further augment this by clicking on the settings in the upper right corner of the route planner and choosing from the one-way or round-trip option and the shortest or fastest route option. After you have completed your stops, click See Route Details to receive turn-by-turn instructions, or you can Print these instructions for ease of use.</p><p>Please note most trips are generally 200 km round trip, which is well within the range of most EVs when starting with a full battery charge. If you will be going on a more extended trip (over 200 km total) or the EV battery is not fully charged, it is recommended that you review your EV's range information and plan the best place to stop for a mid-route charge if necessary. For additional information on public charging stations, including availability: BC Hydro, PlugShare.com and ChargeHub.com are helpful resources.</p>"
+            },
+            "type": "bespoke",
+            "instance": "101",
             "enabled": true
         }
     ],
