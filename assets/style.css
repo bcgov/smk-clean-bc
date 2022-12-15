@@ -29,11 +29,11 @@ header {
     border-bottom: 2px solid #fcba19;
     background-color: #036;
 
-    background-image: url( 'bc-gov-logo-transparent.png' );
-    background-position: 10px -5px;
+    background-image: url( 'BC-cleanbc_cmyk_rev_reduced.png' );
+    background-position: 10px 5px;
     background-repeat: no-repeat;
 
-    padding-left: 185px;
+    padding-left: 275px;
     color: white;
     font-size: 30px;
     padding-top: 10px;
@@ -77,7 +77,6 @@ dialog {
     align-items: center;
     max-width: 50em;
     max-height: calc( 100% - 5em );
-    font-family:"Meta W01 Medium", Arial, Helvetica, sans-serif;
     z-index: 3;
     padding: 0;
     border: none;
