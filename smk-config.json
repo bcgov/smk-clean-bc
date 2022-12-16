@@ -679,6 +679,11 @@
         {
             "type": "directions",
             "enabled": true,
+            "command": {
+                "optimal": false,
+                "vehicleType": false
+            },
+            "criteria": "fastest",
             "routePlannerService": {
                 "url": "https://router.api.gov.bc.ca/"
             },
