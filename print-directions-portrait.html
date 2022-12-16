@@ -311,10 +311,6 @@
                                     </span>
                                 </div>
                             </div>
-
-                            <div class="smk-map-frame"
-                                v-content="page.map"
-                            ></div>
                         </section>
         
                         <section class="right-side">
@@ -536,6 +532,7 @@
                 } )
             }
 
+            // START removable - used for removed map, but may be useful for other data
             model.pages.forEach( function ( p, pi ) {
                 for ( var d = 0; d < p.directions.length; d += 1 ) {
                     var dr = p.directions[ d ]
@@ -667,15 +664,10 @@
                     c.viewer.location = {
                         extent: turf.bbox( turf.buffer( turf.bboxPolygon( bb ), diag * 0.1 ) )
                     }
-
-                    return SMK.INIT( {
-                        'smk-id':           'print-' + pi,
-                        'smk-container-sel': el,
-                        'smk-config':       [ c, 'hide-tool=all', 'show-tool=scale' ]
-                    } )
                 }
 
             } )
+            // END removable
 
             var instructionType = {
                 START:              [ 'trip_origin', null,      'Go on' ],
