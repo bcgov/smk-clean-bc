@@ -351,6 +351,8 @@
         include( 'vue', 'vue-config', 'turf' ).then( function () {
             var key = location.search.substr( 1 )
             var cfg = JSON.parse( window.sessionStorage.getItem( key ) )
+            console.log('cfg:')
+            console.log(JSON.stringify(cfg))
 
             var dirs = cfg.etc.directions
             delete cfg.etc
@@ -371,6 +373,7 @@
             function close( p1, p2, min ) { 
                 var d0 = p1[0] - p2[0]
                 var d1 = p1[1] - p2[1]
+                console.log('close: p1=' + JSON.stringify(p1) + '; p2=' + JSON.stringify(p2) + '; min=' + JSON.stringify(min) + '; returning ' + JSON.stringify(( d0 * d0 + d1 * d1 ) <= ( min * min )))
                 return ( d0 * d0 + d1 * d1 ) <= ( min * min )
             }
 
@@ -410,10 +413,12 @@
             }
 
             var spi = 0, pi = 0, prevDir, prevPrefix
+            console.log('starting first directions foreach')
             dirs.directions.forEach( function ( d, i ) {
                 d.index = i + 1
                 // d.waypointStyle = getWaypoint( d.point ).style
 
+                // insert "Starting..." text as first direction
                 if ( !prevDir ) {
                     prevPrefix = d.prefix = segmentPrefix( d.segmentIndex )
                     prevDir = d
@@ -422,9 +427,12 @@
 
                 if ( !d.name ) d.name = prevDir.name
 
+                // count the number of route points that are not close to any direction points
+                console.log('before while: pi=' + pi)
                 while ( !close( dirs.route[ pi ], d.point, 0.00001 ) ) {
                     pi += 1
                 }
+                console.log('after while: pi=' + pi)
                 
                 prevDir.route = {
                     start: spi,
@@ -450,6 +458,7 @@
                 spi = pi
                 prevDir = d
             } )
+            console.log('end of first directions foreach: spi=' + JSON.stringify(spi) + '; pi=' + JSON.stringify(pi) + '; prevDir=' + JSON.stringify(prevDir))
             prevDir.route = {
                 start: pi,
                 end: pi,
@@ -458,9 +467,11 @@
 
             var dirPages = [], dirPage
             var targetDist
+            console.log('starting second directions foreach')
             dirs.directions.forEach( function ( d ) {
                 if ( !d.route.dist ) {
                     dirPage.push( d )
+                    console.log('ending page because direction has no route distance; d=' + JSON.stringify(d))
                     return
                 }
 
@@ -468,6 +479,7 @@
                     targetDist = d.route.dist
                     dirPage = [ d ]
                     dirPages.push( dirPage )
+                    console.log('ending page because targetDist is undefined; d=' + JSON.stringify(d))
                     return
                 }
 
@@ -477,12 +489,14 @@
                 if ( r < thresholdFactor ) {
                     dirPage.push( d )
                     targetDist = Math.sqrt( targetDist * d.route.dist )
+                    console.log('ending page because r is less than thresholdFactor; d=' + JSON.stringify(d))
                     return
                 }
 
                 if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
                     dirPage.push( d )
                     targetDist = null 
+                    console.log('ending page because r is less than smallThresholdFactor && d.route.dist is less than targetDist; d=' + JSON.stringify(d))
                     return
                 }
 
@@ -493,6 +507,7 @@
                     while ( dirPage.length > perPg ) {
                         var s = dirPage.splice( perPg, perPg )
                         dirPages.push( s )
+                        console.log('splicing page because dirPage.length > maxDirs; d=' + JSON.stringify(d))
                     }
                 }
 
@@ -500,6 +515,8 @@
                 dirPages.push( dirPage )
                 targetDist = d.route.dist
             } )
+            console.log('after second directions foreach: targetDist=' + JSON.stringify(targetDist) + '; dirPages:')
+            console.log(JSON.stringify(dirPages))
 
             var model = {
                 waypoints: dirs.waypoints,
@@ -534,140 +551,143 @@
 
             // START removable - used for removed map, but may be useful for other data
             model.pages.forEach( function ( p, pi ) {
-                for ( var d = 0; d < p.directions.length; d += 1 ) {
-                    var dr = p.directions[ d ]
+                // for ( var d = 0; d < p.directions.length; d += 1 ) {
+                //     var dr = p.directions[ d ]
 
-                    for ( var r = dr.route.start; r <= dr.route.end; r += 1 ) {
-                        p.route.push( dirs.route[ r ] )
-                    } 
-                }
+                //     for ( var r = dr.route.start; r <= dr.route.end; r += 1 ) {
+                //         p.route.push( dirs.route[ r ] )
+                //     } 
+                // }
 
-                p.map.create = function ( el ) {                    
-                    var c = JSON.parse( mapCfg )
+                // p.map.create = function ( el ) {                    
+                //     var c = JSON.parse( mapCfg )
 
-                    c.viewer.displayContext.print = [ {
-                        type: 'folder',
-                        items: []
-                    } ]
-                    var disp = c.viewer.displayContext.print[ 0 ].items
+                //     c.viewer.displayContext.print = [ {
+                //         type: 'folder',
+                //         items: []
+                //     } ]
+                //     var disp = c.viewer.displayContext.print[ 0 ].items
 
-                    c.layers.unshift( {
-                        type: 'vector',
-                        id: 'route-base',
-                        isVisible: true,
-                        dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( dirs.route ) ),
-                        style: {
-                            strokeColor: "#10dee6",
-                            strokeWidth: 4,
-                            strokeOpacity: 1
-                        },
-                        legends: false
-                    } )
-                    disp.push( { id: 'route-base' } )
+                //     c.layers.unshift( {
+                //         type: 'vector',
+                //         id: 'route-base',
+                //         isVisible: true,
+                //         dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( dirs.route ) ),
+                //         style: {
+                //             strokeColor: "#10dee6",
+                //             strokeWidth: 4,
+                //             strokeOpacity: 1
+                //         },
+                //         legends: false
+                //     } )
+                //     disp.push( { id: 'route-base' } )
 
-                    if ( dirs.segments ) {
-                        var pageRouteStart = p.directions[ 0 ].route.start
-                        var pageRouteEnd = p.directions[ p.directions.length - 1 ].route.end //- 1
-                        // console.log( 'page range', pageRouteStart, pageRouteEnd )
-                        for ( var si = 0; si < dirs.segments.features.length; si += 1 ) {
-                            var seg = JSON.parse( JSON.stringify( dirs.segments.features[ si ] ) )
-                            var segSt = seg.properties.index
-                            var segEn = segSt + seg.geometry.coordinates.length - 1
+                //     if ( dirs.segments ) {
+                //         var pageRouteStart = p.directions[ 0 ].route.start
+                //         var pageRouteEnd = p.directions[ p.directions.length - 1 ].route.end //- 1
+                //         // console.log( 'page range', pageRouteStart, pageRouteEnd )
+                //         for ( var si = 0; si < dirs.segments.features.length; si += 1 ) {
+                //             var seg = JSON.parse( JSON.stringify( dirs.segments.features[ si ] ) )
+                //             var segSt = seg.properties.index
+                //             var segEn = segSt + seg.geometry.coordinates.length - 1
 
-                            var pageOffSt = Math.max( 0, pageRouteStart - segSt )
-                            var pageOffEn = Math.min( seg.geometry.coordinates.length, pageRouteEnd - segSt + 1 )
+                //             var pageOffSt = Math.max( 0, pageRouteStart - segSt )
+                //             var pageOffEn = Math.min( seg.geometry.coordinates.length, pageRouteEnd - segSt + 1 )
 
-                            // console.log( 'segment', segSt, segEn, seg.properties )
+                //             // console.log( 'segment', segSt, segEn, seg.properties )
 
-                            if ( pageRouteStart >= segEn ) {
-                                // console.log( 'skip' )
-                                continue
-                            }
-                            else if ( pageRouteEnd <= segSt ) {
-                                // console.log( 'last' )
-                                break
-                            }
-                            else if ( pageRouteStart >= segSt ) {
-                                // console.log( 'overlap start', pageOffSt, pageOffEn )
-                                seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                            }
-                            else if ( pageRouteStart < segSt && pageRouteEnd > segEn ) {
-                                // console.log( 'overlap middle')
-                            }
-                            else if ( pageRouteEnd > segSt ) {
-                                // console.log( 'overlap end', pageOffSt, pageOffEn)
-                                seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                            }
-                            else {
-                                // dont know
-                                debugger
-                            }
+                //             if ( pageRouteStart >= segEn ) {
+                //                 // console.log( 'skip' )
+                //                 continue
+                //             }
+                //             else if ( pageRouteEnd <= segSt ) {
+                //                 // console.log( 'last' )
+                //                 break
+                //             }
+                //             else if ( pageRouteStart >= segSt ) {
+                //                 // console.log( 'overlap start', pageOffSt, pageOffEn )
+                //                 seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
+                //             }
+                //             else if ( pageRouteStart < segSt && pageRouteEnd > segEn ) {
+                //                 // console.log( 'overlap middle')
+                //             }
+                //             else if ( pageRouteEnd > segSt ) {
+                //                 // console.log( 'overlap end', pageOffSt, pageOffEn)
+                //                 seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
+                //             }
+                //             else {
+                //                 // dont know
+                //                 debugger
+                //             }
 
-                            var st = seg.style
-                            delete seg.style
+                //             var st = seg.style
+                //             delete seg.style
 
-                            c.layers.unshift( {
-                                type: 'vector',
-                                id: 'route-segment-' + si,
-                                isVisible: true,
-                                dataUrl: 'data:application/json,' + JSON.stringify( seg ),
-                                style: st,
-                                legends: false
-                            } )
-                            disp.push( { id: 'route-segment-' + si } )
+                //             c.layers.unshift( {
+                //                 type: 'vector',
+                //                 id: 'route-segment-' + si,
+                //                 isVisible: true,
+                //                 dataUrl: 'data:application/json,' + JSON.stringify( seg ),
+                //                 style: st,
+                //                 legends: false
+                //             } )
+                //             disp.push( { id: 'route-segment-' + si } )
 
-                        }
-                    }
-                    else {
-                        c.layers.unshift( {
-                            type: 'vector',
-                            id: 'route-segment',
-                            isVisible: true,
-                            dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( p.route ) ),
-                            style: {
-                                strokeColor: "green",
-                                strokeWidth: 8,
-                                strokeOpacity: 0.8
-                            },
-                            legends: false
-                        } )
-                        disp.push( { id: 'route-segment' } )
-                    }
+                //         }
+                //     }
+                //     else {
+                //         c.layers.unshift( {
+                //             type: 'vector',
+                //             id: 'route-segment',
+                //             isVisible: true,
+                //             dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( p.route ) ),
+                //             style: {
+                //                 strokeColor: "green",
+                //                 strokeWidth: 8,
+                //                 strokeOpacity: 0.8
+                //             },
+                //             legends: false
+                //         } )
+                //         disp.push( { id: 'route-segment' } )
+                //     }
 
-                    p.directions.reverse().forEach( function ( d, i ) {
-                        c.layers.unshift( {
-                            type: 'vector',
-                            id: 'dir-' + i,
-                            isVisible: true,
-                            dataUrl: 'data:application/json,' + JSON.stringify( turf.point( d.point ) ),
-                            tooltip: {
-                                title: '#' + d.index,
-                                option: {
-                                    className: 'smk-route-tooltip ' + ( d.waypointStyle || '' )
-                                }
-                            },
-                            style: {
-                                strokeColor: "red",
-                                strokeWidth: 8,
-                                strokeOpacity: 0.8
-                            },
-                            legends: false
-                        } )
-                        disp.push( { id: 'dir-' + i } )
-                    } )
-                    p.directions.reverse()
+                //     p.directions.reverse().forEach( function ( d, i ) {
+                //         c.layers.unshift( {
+                //             type: 'vector',
+                //             id: 'dir-' + i,
+                //             isVisible: true,
+                //             dataUrl: 'data:application/json,' + JSON.stringify( turf.point( d.point ) ),
+                //             tooltip: {
+                //                 title: '#' + d.index,
+                //                 option: {
+                //                     className: 'smk-route-tooltip ' + ( d.waypointStyle || '' )
+                //                 }
+                //             },
+                //             style: {
+                //                 strokeColor: "red",
+                //                 strokeWidth: 8,
+                //                 strokeOpacity: 0.8
+                //             },
+                //             legends: false
+                //         } )
+                //         disp.push( { id: 'dir-' + i } )
+                //     } )
+                //     p.directions.reverse()
 
-                    var ls = turf.lineString( p.route )
-                    var bb = turf.bbox( ls )
-                    var diag = turf.distance( [ bb[0], bb[1] ], [ bb[2], bb[3] ] )
+                //     var ls = turf.lineString( p.route )
+                //     var bb = turf.bbox( ls )
+                //     var diag = turf.distance( [ bb[0], bb[1] ], [ bb[2], bb[3] ] )
 
-                    c.viewer.location = {
-                        extent: turf.bbox( turf.buffer( turf.bboxPolygon( bb ), diag * 0.1 ) )
-                    }
-                }
+                //     c.viewer.location = {
+                //         extent: turf.bbox( turf.buffer( turf.bboxPolygon( bb ), diag * 0.1 ) )
+                //     }
+                // }
 
             } )
             // END removable
+            console.log('model:')
+            console.log(JSON.stringify(model))
+
 
             var instructionType = {
                 START:              [ 'trip_origin', null,      'Go on' ],
