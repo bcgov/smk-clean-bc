@@ -88,13 +88,13 @@
                 flex-basis: 100%;
             }
 
-            section.left-side {
+            /* section.left-side {
                 flex-basis: 75%;
             }
 
             section.right-side {
                 flex-basis: 25%;
-            }
+            } */
 
             .smk-map-frame {
                 flex: 1 1;
@@ -278,8 +278,6 @@
                             <div class="smk-map-frame"
                                 v-content="overview"
                             ></div>
-
-                            <!-- <div class="page-number">Page 1 of {{ pages.length + 1 }}</div> -->
                         </section>
                     </div>
                 </article>            
@@ -294,7 +292,7 @@
                     </header>
                         
                     <div class="page">
-                        <section class="left-side">
+                        <!-- <section class="left-side">
                             <div class="waypoints">
                                 <div class="waypoint"
                                     v-for="w in waypoints"
@@ -311,9 +309,9 @@
                                     </span>
                                 </div>
                             </div>
-                        </section>
+                        </section> -->
         
-                        <section class="right-side">
+                        <section>
                             <div class="directions">
                                 <div class="direction"
                                     v-for="d in page.directions"
@@ -335,8 +333,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="page-number">Page {{ page.index + 1 }} of {{ pages.length + 1 }}</div> -->
                         </section>
                     </div>
                 </article>     
@@ -465,56 +461,59 @@
                 dist: 0
             }
 
-            var dirPages = [], dirPage
+            var dirPages = [], dirPage = []
             var targetDist
             console.log('starting second directions foreach')
             dirs.directions.forEach( function ( d ) {
-                if ( !d.route.dist ) {
+
+                // if ( !d.route.dist ) {
                     dirPage.push( d )
-                    console.log('ending page because direction has no route distance; d=' + JSON.stringify(d))
-                    return
-                }
+                //     console.log('returning because direction has no route distance; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                if ( !targetDist ) {
-                    targetDist = d.route.dist
-                    dirPage = [ d ]
-                    dirPages.push( dirPage )
-                    console.log('ending page because targetDist is undefined; d=' + JSON.stringify(d))
-                    return
-                }
+                // if ( !targetDist ) {
+                //     targetDist = d.route.dist
+                //     dirPage = [ d ]
+                //     dirPages.push( dirPage )
+                //     console.log('ending page and returning because targetDist is undefined; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                var r = d.route.dist / targetDist
-                if ( r < 1 ) r = 1 / r
+                // var r = d.route.dist / targetDist
+                // if ( r < 1 ) r = 1 / r
 
-                if ( r < thresholdFactor ) {
-                    dirPage.push( d )
-                    targetDist = Math.sqrt( targetDist * d.route.dist )
-                    console.log('ending page because r is less than thresholdFactor; d=' + JSON.stringify(d))
-                    return
-                }
+                // if ( r < thresholdFactor ) {
+                //     dirPage.push( d )
+                //     targetDist = Math.sqrt( targetDist * d.route.dist )
+                //     console.log('returning because r is less than thresholdFactor; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
-                    dirPage.push( d )
-                    targetDist = null 
-                    console.log('ending page because r is less than smallThresholdFactor && d.route.dist is less than targetDist; d=' + JSON.stringify(d))
-                    return
-                }
+                // if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
+                //     dirPage.push( d )
+                //     targetDist = null 
+                //     console.log('returning because r is less than smallThresholdFactor && d.route.dist is less than targetDist; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                if ( dirPage.length > maxDirs ) {
-                    var pgs = Math.ceil( dirPage.length / maxDirs ) 
-                    var perPg = Math.round( dirPage.length / pgs )
+                // if ( dirPage.length > maxDirs ) {
+                //     var pgs = Math.ceil( dirPage.length / maxDirs ) 
+                //     var perPg = Math.round( dirPage.length / pgs )
 
-                    while ( dirPage.length > perPg ) {
-                        var s = dirPage.splice( perPg, perPg )
-                        dirPages.push( s )
-                        console.log('splicing page because dirPage.length > maxDirs; d=' + JSON.stringify(d))
-                    }
-                }
+                //     while ( dirPage.length > perPg ) {
+                //         var s = dirPage.splice( perPg, perPg )
+                //         dirPages.push( s )
+                //         console.log('splicing page because dirPage.length > maxDirs; d=' + JSON.stringify(d))
+                //     }
+                // }
 
-                dirPage = [ d ]
-                dirPages.push( dirPage )
-                targetDist = d.route.dist
+                // dirPage = [ d ]
+                // dirPages.push( dirPage )
+                // console.log('ended page because no other early returns; d=' + JSON.stringify(d))
+                // targetDist = d.route.dist
             } )
+            dirPages.push( dirPage )
             console.log('after second directions foreach: targetDist=' + JSON.stringify(targetDist) + '; dirPages:')
             console.log(JSON.stringify(dirPages))
 
@@ -549,142 +548,6 @@
                 } )
             }
 
-            // START removable - used for removed map, but may be useful for other data
-            model.pages.forEach( function ( p, pi ) {
-                // for ( var d = 0; d < p.directions.length; d += 1 ) {
-                //     var dr = p.directions[ d ]
-
-                //     for ( var r = dr.route.start; r <= dr.route.end; r += 1 ) {
-                //         p.route.push( dirs.route[ r ] )
-                //     } 
-                // }
-
-                // p.map.create = function ( el ) {                    
-                //     var c = JSON.parse( mapCfg )
-
-                //     c.viewer.displayContext.print = [ {
-                //         type: 'folder',
-                //         items: []
-                //     } ]
-                //     var disp = c.viewer.displayContext.print[ 0 ].items
-
-                //     c.layers.unshift( {
-                //         type: 'vector',
-                //         id: 'route-base',
-                //         isVisible: true,
-                //         dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( dirs.route ) ),
-                //         style: {
-                //             strokeColor: "#10dee6",
-                //             strokeWidth: 4,
-                //             strokeOpacity: 1
-                //         },
-                //         legends: false
-                //     } )
-                //     disp.push( { id: 'route-base' } )
-
-                //     if ( dirs.segments ) {
-                //         var pageRouteStart = p.directions[ 0 ].route.start
-                //         var pageRouteEnd = p.directions[ p.directions.length - 1 ].route.end //- 1
-                //         // console.log( 'page range', pageRouteStart, pageRouteEnd )
-                //         for ( var si = 0; si < dirs.segments.features.length; si += 1 ) {
-                //             var seg = JSON.parse( JSON.stringify( dirs.segments.features[ si ] ) )
-                //             var segSt = seg.properties.index
-                //             var segEn = segSt + seg.geometry.coordinates.length - 1
-
-                //             var pageOffSt = Math.max( 0, pageRouteStart - segSt )
-                //             var pageOffEn = Math.min( seg.geometry.coordinates.length, pageRouteEnd - segSt + 1 )
-
-                //             // console.log( 'segment', segSt, segEn, seg.properties )
-
-                //             if ( pageRouteStart >= segEn ) {
-                //                 // console.log( 'skip' )
-                //                 continue
-                //             }
-                //             else if ( pageRouteEnd <= segSt ) {
-                //                 // console.log( 'last' )
-                //                 break
-                //             }
-                //             else if ( pageRouteStart >= segSt ) {
-                //                 // console.log( 'overlap start', pageOffSt, pageOffEn )
-                //                 seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                //             }
-                //             else if ( pageRouteStart < segSt && pageRouteEnd > segEn ) {
-                //                 // console.log( 'overlap middle')
-                //             }
-                //             else if ( pageRouteEnd > segSt ) {
-                //                 // console.log( 'overlap end', pageOffSt, pageOffEn)
-                //                 seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                //             }
-                //             else {
-                //                 // dont know
-                //                 debugger
-                //             }
-
-                //             var st = seg.style
-                //             delete seg.style
-
-                //             c.layers.unshift( {
-                //                 type: 'vector',
-                //                 id: 'route-segment-' + si,
-                //                 isVisible: true,
-                //                 dataUrl: 'data:application/json,' + JSON.stringify( seg ),
-                //                 style: st,
-                //                 legends: false
-                //             } )
-                //             disp.push( { id: 'route-segment-' + si } )
-
-                //         }
-                //     }
-                //     else {
-                //         c.layers.unshift( {
-                //             type: 'vector',
-                //             id: 'route-segment',
-                //             isVisible: true,
-                //             dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( p.route ) ),
-                //             style: {
-                //                 strokeColor: "green",
-                //                 strokeWidth: 8,
-                //                 strokeOpacity: 0.8
-                //             },
-                //             legends: false
-                //         } )
-                //         disp.push( { id: 'route-segment' } )
-                //     }
-
-                //     p.directions.reverse().forEach( function ( d, i ) {
-                //         c.layers.unshift( {
-                //             type: 'vector',
-                //             id: 'dir-' + i,
-                //             isVisible: true,
-                //             dataUrl: 'data:application/json,' + JSON.stringify( turf.point( d.point ) ),
-                //             tooltip: {
-                //                 title: '#' + d.index,
-                //                 option: {
-                //                     className: 'smk-route-tooltip ' + ( d.waypointStyle || '' )
-                //                 }
-                //             },
-                //             style: {
-                //                 strokeColor: "red",
-                //                 strokeWidth: 8,
-                //                 strokeOpacity: 0.8
-                //             },
-                //             legends: false
-                //         } )
-                //         disp.push( { id: 'dir-' + i } )
-                //     } )
-                //     p.directions.reverse()
-
-                //     var ls = turf.lineString( p.route )
-                //     var bb = turf.bbox( ls )
-                //     var diag = turf.distance( [ bb[0], bb[1] ], [ bb[2], bb[3] ] )
-
-                //     c.viewer.location = {
-                //         extent: turf.bbox( turf.buffer( turf.bboxPolygon( bb ), diag * 0.1 ) )
-                //     }
-                // }
-
-            } )
-            // END removable
             console.log('model:')
             console.log(JSON.stringify(model))
 
