@@ -25,7 +25,7 @@
                 /* position: relative; */
                 overflow: hidden;
 
-                height: 8.5in;
+                min-height: 8.5in;
                 width: 6.85in;
                 margin: auto;
 
@@ -465,57 +465,59 @@
             var targetDist
             console.log('starting second directions foreach')
             dirs.directions.forEach( function ( d ) {
+                dirPage.push( d )
 
-                // finish 
-                if ( !d.route.dist ) {
-                    dirPage.push( d )
-                    console.log('returning because direction has no route distance; d=' + JSON.stringify(d))
-                    return
-                }
+                // // finish 
+                // if ( !d.route.dist ) {
+                //     dirPage.push( d )
+                //     console.log('returning because direction has no route distance; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                // start
-                if ( !targetDist ) {
-                    targetDist = d.route.dist
-                    dirPage = [ d ]
-                    dirPages.push( dirPage )
-                    console.log('ending page and returning because targetDist is undefined; d=' + JSON.stringify(d))
-                    return
-                }
+                // // start
+                // if ( !targetDist ) {
+                //     targetDist = d.route.dist
+                //     dirPage = [ d ]
+                //     dirPages.push( dirPage )
+                //     console.log('ending page and returning because targetDist is undefined; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                var r = d.route.dist / targetDist
-                if ( r < 1 ) r = 1 / r
+                // var r = d.route.dist / targetDist
+                // if ( r < 1 ) r = 1 / r
 
-                if ( r < thresholdFactor ) {
-                    dirPage.push( d )
-                    targetDist = Math.sqrt( targetDist * d.route.dist )
-                    console.log('returning because r is less than thresholdFactor; d=' + JSON.stringify(d))
-                    return
-                }
+                // if ( r < thresholdFactor ) {
+                //     dirPage.push( d )
+                //     targetDist = Math.sqrt( targetDist * d.route.dist )
+                //     console.log('returning because r is less than thresholdFactor; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
-                    dirPage.push( d )
-                    targetDist = null 
-                    console.log('returning because r is less than smallThresholdFactor && d.route.dist is less than targetDist; d=' + JSON.stringify(d))
-                    return
-                }
+                // if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
+                //     dirPage.push( d )
+                //     targetDist = null 
+                //     console.log('returning because r is less than smallThresholdFactor && d.route.dist is less than targetDist; d=' + JSON.stringify(d))
+                //     return
+                // }
 
-                if ( dirPage.length > maxDirs ) {
-                    var pgs = Math.ceil( dirPage.length / maxDirs ) 
-                    var perPg = Math.round( dirPage.length / pgs )
+                // if ( dirPage.length > maxDirs ) {
+                //     var pgs = Math.ceil( dirPage.length / maxDirs ) 
+                //     var perPg = Math.round( dirPage.length / pgs )
 
-                    while ( dirPage.length > perPg ) {
-                        var s = dirPage.splice( perPg, perPg )
-                        dirPages.push( s )
-                        console.log('splicing page because dirPage.length > maxDirs; d=' + JSON.stringify(d))
-                    }
-                }
+                //     while ( dirPage.length > perPg ) {
+                //         var s = dirPage.splice( perPg, perPg )
+                //         dirPages.push( s )
+                //         console.log('splicing page because dirPage.length > maxDirs; d=' + JSON.stringify(d))
+                //     }
+                // }
 
-                dirPage = [ d ]
-                dirPages.push( dirPage )
-                console.log('ended page because no other early returns; d=' + JSON.stringify(d))
-                targetDist = d.route.dist
+                // dirPage = [ d ]
+                // dirPages.push( dirPage )
+                // console.log('ended page because no other early returns; d=' + JSON.stringify(d))
+                // targetDist = d.route.dist
+                console.log('d=' + JSON.stringify(d))
             } )
-            // dirPages.push( dirPage )
+            dirPages.push( dirPage )
             console.log('after second directions foreach: targetDist=' + JSON.stringify(targetDist) + '; dirPages:')
             console.log(JSON.stringify(dirPages))
 
