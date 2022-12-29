@@ -6,8 +6,7 @@
         <title>CleanBC Fleet Route Planner</title>
         
         <!-- SMK BOOTSTRAP - - - - - - - -->
-        <!-- <script src="lib/smk.js"></script> -->
-        <script src="./node_modules/@bcgov/smk/dist/smk.js"></script>"
+        <script src="./node_modules/@bcgov/smk/dist/smk.js"></script>
         <!-- - - - - - - - - - - - - - - -->
 
         <style>
@@ -17,15 +16,13 @@
             }
 
             body {
-                font-family: Helvetica,Arial,sans-serif;
+                font-family: 'BC Sans',Helvetica,Arial,sans-serif;
             }
 
             article {
-                /* this change seems to fix the slow print preview */
-                /* position: relative; */
                 overflow: hidden;
 
-                height: 8.5in;
+                min-height: 8.5in;
                 width: 6.85in;
                 margin: auto;
 
@@ -69,7 +66,6 @@
 
             .header-title {
                 margin-left:    20px;
-
                 display:        flex;
                 flex-direction: column;
                 justify-content:center;
@@ -86,14 +82,6 @@
                 display: flex;
                 flex-direction: column;
                 flex-basis: 100%;
-            }
-
-            section.left-side {
-                flex-basis: 75%;
-            }
-
-            section.right-side {
-                flex-basis: 25%;
             }
 
             .smk-map-frame {
@@ -157,8 +145,6 @@
                 padding: 0px;
                 border-radius: 8px;
                 background-color: #fff;
-                border: 1px solid #fff;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.4);
                 height: 1%;
             }
 
@@ -172,7 +158,7 @@
             .direction .instruction, .direction.isOversize .instruction {
                 flex-basis: 100%;
                 position: relative;
-                padding-left: 25px;
+                padding-left: 30px;
 
                 color: red;
                 font-style: italic;
@@ -182,7 +168,7 @@
 
             .direction .metric {
                 font-size: 12px;
-                padding-left: 25px;
+                padding-left: 30px;
             }
 
             #route-pages .smk-map-frame .smk-route-tooltip {
@@ -250,8 +236,7 @@
             <div id="route-pages">
                 <article>
                     <header>
-                        <img src="assets/BCID_H_rgb_pos.png" alt="BC Logo" class="logo">
-                        <img src="assets/CleanBC_logo.svg" alt="CleanBC Logo" class="logo">
+                        <img src="assets/BC-cleanbc_cmyk_pos_reduced.png" alt="CleanBC Logo" class="logo">
                         <div class="header-title">CleanBC Fleet Route Planner</div>
                         <div class="build-info"></div>
                     </header>
@@ -278,8 +263,6 @@
                             <div class="smk-map-frame"
                                 v-content="overview"
                             ></div>
-
-                            <!-- <div class="page-number">Page 1 of {{ pages.length + 1 }}</div> -->
                         </section>
                     </div>
                 </article>            
@@ -294,30 +277,7 @@
                     </header>
                         
                     <div class="page">
-                        <section class="left-side">
-                            <div class="waypoints">
-                                <div class="waypoint"
-                                    v-for="w in waypoints"
-                                    v-bind:class="[ w.style || '' ]"
-                                >{{ w.label }} at 
-                                    <span class="address" v-if="w.fullAddress">{{ w.fullAddress }}</span>
-                                    <span class="coordinates" v-else>
-                                        <span class="smk-ordinate">
-                                            <label>latitude <span>{{ w.latitude | formatNumber( 6, 3 ) }}</span></label>
-                                        </span>,
-                                        <span class="smk-ordinate">
-                                            <label>longitude <span>{{ w.longitude | formatNumber( 6, 3 ) }}</span></label>
-                                        </span>                    
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="smk-map-frame"
-                                v-content="page.map"
-                            ></div>
-                        </section>
-        
-                        <section class="right-side">
+                        <section>
                             <div class="directions">
                                 <div class="direction"
                                     v-for="d in page.directions"
@@ -339,8 +299,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="page-number">Page {{ page.index + 1 }} of {{ pages.length + 1 }}</div> -->
                         </section>
                     </div>
                 </article>     
@@ -349,8 +307,6 @@
     </body>
 
     <script>
-        var maxDirs = 10, thresholdFactor = 6, smallThresholdFactor = 20
-
         include.option( { baseUrl: ( new URL( './node_modules/@bcgov/smk/dist/assets/src/lib', document.location ) ).toString() } )
         include( 'vue', 'vue-config', 'turf' ).then( function () {
             var key = location.search.substr( 1 )
@@ -372,138 +328,50 @@
             dirs.waypoints[ wl - 1 ].label = 'Finish'
             dirs.waypoints[ wl - 1 ].class = 'finish'
 
-            function close( p1, p2, min ) { 
-                var d0 = p1[0] - p2[0]
-                var d1 = p1[1] - p2[1]
-                return ( d0 * d0 + d1 * d1 ) <= ( min * min )
-            }
-
-            function getWaypoint( pt ) {
-                return dirs.waypoints.find( function ( wp ) {
-                    return close( pt, [ wp.longitude, wp.latitude ], 0.00001 )
-                } ) || {}
-            }
-
             function segmentPrefix( i ) {
                 var sg = dirs.segments.features[ i ].properties
 
                 if ( sg.isTruckRoute && !sg.isFerry && !sg.isOversize ) {
-                    return 'Starting Potential Truck Route'
+                    return 'Starting Truck Route'
                 }
                 else if ( !sg.isTruckRoute && !sg.isFerry && !sg.isOversize ) {
-                    return 'Starting Unverified Route'
+                    return 'Starting Route'
                 }
                 else if ( sg.isFerry ) {
-                    return 'Starting Ferry Trip (Unverified)'
+                    return 'Starting Ferry Trip'
                 }
                 else if ( sg.isOversize ) {
                     return 'Starting Oversized Truck Route'
                 }
                 else {
-                    throw 'dont know how to handle'
+                    return ''
                 }
             }
 
-            function segmentClasses( i ) {
-                var sg = dirs.segments.features[ i ].properties
-                return {
-                    isTruckRoute: !!sg.isTruckRoute,
-                    isFerry: !!sg.isFerry,
-                    isOversize: !!sg.isOversize,
-                }
-            }
-
-            var spi = 0, pi = 0, prevDir, prevPrefix
+            // modify directions by adding index and other data
+            var prevDir
             dirs.directions.forEach( function ( d, i ) {
                 d.index = i + 1
-                // d.waypointStyle = getWaypoint( d.point ).style
 
+                // insert "Starting..." text as first direction
                 if ( !prevDir ) {
-                    prevPrefix = d.prefix = segmentPrefix( d.segmentIndex )
+                    d.prefix = segmentPrefix( d.segmentIndex )
                     prevDir = d
                     return
                 }
 
-                if ( !d.name ) d.name = prevDir.name
-
-                while ( !close( dirs.route[ pi ], d.point, 0.00001 ) ) {
-                    pi += 1
+                // last dir (finish) has no name
+                if ( !d.name ) {
+                    d.name = prevDir.name
                 }
-                
-                prevDir.route = {
-                    start: spi,
-                    end: pi,
-                    dist: turf.distance( d.point, prevDir.point )
-                }
-
-                // var maxSeg = Math.max.apply( Math, Object.keys( routeAttrs[ spi ].segs ) )
-                prevDir.class = segmentClasses( prevDir.segmentIndex )
-                // prevDir.class[ getWaypoint( prevDir.point ).class || '' ] = true
-
-                // if ( Object.keys( routeAttrs[ spi ].segs ).length == 2 || spi == 0 ) {
-                if ( d.segmentIndex != prevDir.segmentIndex || spi == 0 ) {
-                    // var sgi = Math.max.apply( Math, Object.keys( routeAttrs[ spi ].segs ) )
-
-                    var pfx =  segmentPrefix( d.segmentIndex )
-                    if ( pfx != prevPrefix )
-                        d.prefix = pfx
-
-                    prevPrefix = pfx
-                }
-
-                spi = pi
                 prevDir = d
             } )
-            prevDir.route = {
-                start: pi,
-                end: pi,
-                dist: 0
-            }
 
-            var dirPages = [], dirPage
-            var targetDist
+            var dirPages = [], dirPage = []
             dirs.directions.forEach( function ( d ) {
-                if ( !d.route.dist ) {
-                    dirPage.push( d )
-                    return
-                }
-
-                if ( !targetDist ) {
-                    targetDist = d.route.dist
-                    dirPage = [ d ]
-                    dirPages.push( dirPage )
-                    return
-                }
-
-                var r = d.route.dist / targetDist
-                if ( r < 1 ) r = 1 / r
-
-                if ( r < thresholdFactor ) {
-                    dirPage.push( d )
-                    targetDist = Math.sqrt( targetDist * d.route.dist )
-                    return
-                }
-
-                if ( r > smallThresholdFactor && d.route.dist < targetDist ) {
-                    dirPage.push( d )
-                    targetDist = null 
-                    return
-                }
-
-                if ( dirPage.length > maxDirs ) {
-                    var pgs = Math.ceil( dirPage.length / maxDirs ) 
-                    var perPg = Math.round( dirPage.length / pgs )
-
-                    while ( dirPage.length > perPg ) {
-                        var s = dirPage.splice( perPg, perPg )
-                        dirPages.push( s )
-                    }
-                }
-
-                dirPage = [ d ]
-                dirPages.push( dirPage )
-                targetDist = d.route.dist
+                dirPage.push( d )
             } )
+            dirPages.push( dirPage )
 
             var model = {
                 waypoints: dirs.waypoints,
@@ -535,147 +403,6 @@
                     'smk-config':       [ c, 'hide-tool=all', 'show-tool=scale,legend' ]
                 } )
             }
-
-            model.pages.forEach( function ( p, pi ) {
-                for ( var d = 0; d < p.directions.length; d += 1 ) {
-                    var dr = p.directions[ d ]
-
-                    for ( var r = dr.route.start; r <= dr.route.end; r += 1 ) {
-                        p.route.push( dirs.route[ r ] )
-                    } 
-                }
-
-                p.map.create = function ( el ) {                    
-                    var c = JSON.parse( mapCfg )
-
-                    c.viewer.displayContext.print = [ {
-                        type: 'folder',
-                        items: []
-                    } ]
-                    var disp = c.viewer.displayContext.print[ 0 ].items
-
-                    c.layers.unshift( {
-                        type: 'vector',
-                        id: 'route-base',
-                        isVisible: true,
-                        dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( dirs.route ) ),
-                        style: {
-                            strokeColor: "#10dee6",
-                            strokeWidth: 4,
-                            strokeOpacity: 1
-                        },
-                        legends: false
-                    } )
-                    disp.push( { id: 'route-base' } )
-
-                    if ( dirs.segments ) {
-                        var pageRouteStart = p.directions[ 0 ].route.start
-                        var pageRouteEnd = p.directions[ p.directions.length - 1 ].route.end //- 1
-                        // console.log( 'page range', pageRouteStart, pageRouteEnd )
-                        for ( var si = 0; si < dirs.segments.features.length; si += 1 ) {
-                            var seg = JSON.parse( JSON.stringify( dirs.segments.features[ si ] ) )
-                            var segSt = seg.properties.index
-                            var segEn = segSt + seg.geometry.coordinates.length - 1
-
-                            var pageOffSt = Math.max( 0, pageRouteStart - segSt )
-                            var pageOffEn = Math.min( seg.geometry.coordinates.length, pageRouteEnd - segSt + 1 )
-
-                            // console.log( 'segment', segSt, segEn, seg.properties )
-
-                            if ( pageRouteStart >= segEn ) {
-                                // console.log( 'skip' )
-                                continue
-                            }
-                            else if ( pageRouteEnd <= segSt ) {
-                                // console.log( 'last' )
-                                break
-                            }
-                            else if ( pageRouteStart >= segSt ) {
-                                // console.log( 'overlap start', pageOffSt, pageOffEn )
-                                seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                            }
-                            else if ( pageRouteStart < segSt && pageRouteEnd > segEn ) {
-                                // console.log( 'overlap middle')
-                            }
-                            else if ( pageRouteEnd > segSt ) {
-                                // console.log( 'overlap end', pageOffSt, pageOffEn)
-                                seg.geometry.coordinates = seg.geometry.coordinates.slice( pageOffSt, pageOffEn )
-                            }
-                            else {
-                                // dont know
-                                debugger
-                            }
-
-                            var st = seg.style
-                            delete seg.style
-
-                            c.layers.unshift( {
-                                type: 'vector',
-                                id: 'route-segment-' + si,
-                                isVisible: true,
-                                dataUrl: 'data:application/json,' + JSON.stringify( seg ),
-                                style: st,
-                                legends: false
-                            } )
-                            disp.push( { id: 'route-segment-' + si } )
-
-                        }
-                    }
-                    else {
-                        c.layers.unshift( {
-                            type: 'vector',
-                            id: 'route-segment',
-                            isVisible: true,
-                            dataUrl: 'data:application/json,' + JSON.stringify( turf.lineString( p.route ) ),
-                            style: {
-                                strokeColor: "green",
-                                strokeWidth: 8,
-                                strokeOpacity: 0.8
-                            },
-                            legends: false
-                        } )
-                        disp.push( { id: 'route-segment' } )
-                    }
-
-                    p.directions.reverse().forEach( function ( d, i ) {
-                        c.layers.unshift( {
-                            type: 'vector',
-                            id: 'dir-' + i,
-                            isVisible: true,
-                            dataUrl: 'data:application/json,' + JSON.stringify( turf.point( d.point ) ),
-                            tooltip: {
-                                title: '#' + d.index,
-                                option: {
-                                    className: 'smk-route-tooltip ' + ( d.waypointStyle || '' )
-                                }
-                            },
-                            style: {
-                                strokeColor: "red",
-                                strokeWidth: 8,
-                                strokeOpacity: 0.8
-                            },
-                            legends: false
-                        } )
-                        disp.push( { id: 'dir-' + i } )
-                    } )
-                    p.directions.reverse()
-
-                    var ls = turf.lineString( p.route )
-                    var bb = turf.bbox( ls )
-                    var diag = turf.distance( [ bb[0], bb[1] ], [ bb[2], bb[3] ] )
-
-                    c.viewer.location = {
-                        extent: turf.bbox( turf.buffer( turf.bboxPolygon( bb ), diag * 0.1 ) )
-                    }
-
-                    return SMK.INIT( {
-                        'smk-id':           'print-' + pi,
-                        'smk-container-sel': el,
-                        'smk-config':       [ c, 'hide-tool=all', 'show-tool=scale' ]
-                    } )
-                }
-
-            } )
 
             var instructionType = {
                 START:              [ 'trip_origin', null,      'Go on' ],
