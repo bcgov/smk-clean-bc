@@ -88,14 +88,6 @@
                 flex-basis: 100%;
             }
 
-            /* section.left-side {
-                flex-basis: 75%;
-            }
-
-            section.right-side {
-                flex-basis: 25%;
-            } */
-
             .smk-map-frame {
                 flex: 1 1;
                 border: 2px solid black;
@@ -322,14 +314,12 @@
     </body>
 
     <script>
-        var maxDirs = 10, thresholdFactor = 6, smallThresholdFactor = 20
-
         include.option( { baseUrl: ( new URL( './node_modules/@bcgov/smk/dist/assets/src/lib', document.location ) ).toString() } )
         include( 'vue', 'vue-config', 'turf' ).then( function () {
             var key = location.search.substr( 1 )
             var cfg = JSON.parse( window.sessionStorage.getItem( key ) )
-            console.log('cfg:')
-            console.log(JSON.stringify(cfg))
+            // console.log('cfg:')
+            // console.log(JSON.stringify(cfg))
 
             var dirs = cfg.etc.directions
             delete cfg.etc
@@ -346,19 +336,6 @@
             }
             dirs.waypoints[ wl - 1 ].label = 'Finish'
             dirs.waypoints[ wl - 1 ].class = 'finish'
-
-            function close( p1, p2, min ) { 
-                var d0 = p1[0] - p2[0]
-                var d1 = p1[1] - p2[1]
-                console.log('close: p1=' + JSON.stringify(p1) + '; p2=' + JSON.stringify(p2) + '; min=' + JSON.stringify(min) + '; returning ' + JSON.stringify(( d0 * d0 + d1 * d1 ) <= ( min * min )))
-                return ( d0 * d0 + d1 * d1 ) <= ( min * min )
-            }
-
-            function getWaypoint( pt ) {
-                return dirs.waypoints.find( function ( wp ) {
-                    return close( pt, [ wp.longitude, wp.latitude ], 0.00001 )
-                } ) || {}
-            }
 
             function segmentPrefix( i ) {
                 var sg = dirs.segments.features[ i ].properties
@@ -380,80 +357,30 @@
                 }
             }
 
-            function segmentClasses( i ) {
-                var sg = dirs.segments.features[ i ].properties
-                return {
-                    isTruckRoute: !!sg.isTruckRoute,
-                    isFerry: !!sg.isFerry,
-                    isOversize: !!sg.isOversize,
-                }
-            }
-
-            var spi = 0, pi = 0, prevDir, prevPrefix
-            console.log('starting first directions foreach')
+            // modify directions by adding index and other data
+            var prevDir
             dirs.directions.forEach( function ( d, i ) {
                 d.index = i + 1
-                // d.waypointStyle = getWaypoint( d.point ).style
 
                 // insert "Starting..." text as first direction
                 if ( !prevDir ) {
-                    prevPrefix = d.prefix = segmentPrefix( d.segmentIndex )
+                    d.prefix = segmentPrefix( d.segmentIndex )
                     prevDir = d
                     return
                 }
 
+                // last dir (finish) has no name
                 if ( !d.name ) {
                     d.name = prevDir.name
                 }
-
-                // count the number of route points that are not close to any direction points
-                console.log('before while: pi=' + pi)
-                while ( !close( dirs.route[ pi ], d.point, 0.00001 ) ) {
-                    pi += 1
-                }
-                console.log('after while: pi=' + pi)
-                
-                prevDir.route = {
-                    start: spi,
-                    end: pi,
-                    dist: turf.distance( d.point, prevDir.point )
-                }
-
-                // var maxSeg = Math.max.apply( Math, Object.keys( routeAttrs[ spi ].segs ) )
-                prevDir.class = segmentClasses( prevDir.segmentIndex )
-                // prevDir.class[ getWaypoint( prevDir.point ).class || '' ] = true
-
-                // if ( Object.keys( routeAttrs[ spi ].segs ).length == 2 || spi == 0 ) {
-                if ( d.segmentIndex != prevDir.segmentIndex || spi == 0 ) {
-                    // var sgi = Math.max.apply( Math, Object.keys( routeAttrs[ spi ].segs ) )
-
-                    var pfx =  segmentPrefix( d.segmentIndex )
-                    if ( pfx != prevPrefix ) {
-                        d.prefix = pfx
-                    }
-
-                    prevPrefix = pfx
-                }
-
-                spi = pi
                 prevDir = d
             } )
-            console.log('end of first directions foreach: spi=' + JSON.stringify(spi) + '; pi=' + JSON.stringify(pi) + '; prevDir=' + JSON.stringify(prevDir))
-            prevDir.route = {
-                start: pi,
-                end: pi,
-                dist: 0
-            }
 
             var dirPages = [], dirPage = []
-            var targetDist
-            console.log('starting second directions foreach')
             dirs.directions.forEach( function ( d ) {
                 dirPage.push( d )
             } )
             dirPages.push( dirPage )
-            console.log('after second directions foreach: targetDist=' + JSON.stringify(targetDist) + '; dirPages:')
-            console.log(JSON.stringify(dirPages))
 
             var model = {
                 waypoints: dirs.waypoints,
@@ -486,9 +413,8 @@
                 } )
             }
 
-            console.log('model:')
-            console.log(JSON.stringify(model))
-
+            // console.log('model:')
+            // console.log(JSON.stringify(model))
 
             var instructionType = {
                 START:              [ 'trip_origin', null,      'Go on' ],
