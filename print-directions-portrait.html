@@ -6,7 +6,6 @@
         <title>CleanBC Fleet Route Planner</title>
         
         <!-- SMK BOOTSTRAP - - - - - - - -->
-        <!-- <script src="lib/smk.js"></script> -->
         <script src="./node_modules/@bcgov/smk/dist/smk.js"></script>
         <!-- - - - - - - - - - - - - - - -->
 
@@ -21,8 +20,6 @@
             }
 
             article {
-                /* this change seems to fix the slow print preview */
-                /* position: relative; */
                 overflow: hidden;
 
                 min-height: 8.5in;
@@ -314,8 +311,6 @@
         include( 'vue', 'vue-config', 'turf' ).then( function () {
             var key = location.search.substr( 1 )
             var cfg = JSON.parse( window.sessionStorage.getItem( key ) )
-            // console.log('cfg:')
-            // console.log(JSON.stringify(cfg))
 
             var dirs = cfg.etc.directions
             delete cfg.etc
@@ -408,9 +403,6 @@
                     'smk-config':       [ c, 'hide-tool=all', 'show-tool=scale,legend' ]
                 } )
             }
-
-            // console.log('model:')
-            // console.log(JSON.stringify(model))
 
             var instructionType = {
                 START:              [ 'trip_origin', null,      'Go on' ],
