@@ -383,19 +383,19 @@
                 var sg = dirs.segments.features[ i ].properties
 
                 if ( sg.isTruckRoute && !sg.isFerry && !sg.isOversize ) {
-                    return 'Starting Potential Truck Route'
+                    return 'Starting Truck Route'
                 }
                 else if ( !sg.isTruckRoute && !sg.isFerry && !sg.isOversize ) {
-                    return 'Starting Unverified Route'
+                    return 'Starting Route'
                 }
                 else if ( sg.isFerry ) {
-                    return 'Starting Ferry Trip (Unverified)'
+                    return 'Starting Ferry Trip'
                 }
                 else if ( sg.isOversize ) {
                     return 'Starting Oversized Truck Route'
                 }
                 else {
-                    throw 'dont know how to handle'
+                    return ''
                 }
             }
 
