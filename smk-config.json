@@ -297,13 +297,8 @@
                     "id": "ev_network",
                     "name": "EV_Network",
                     "title": "EV Network",
-                    "visible": true
-                },
-                {
-                    "id": "ev_network_web",
-                    "name": "EV_Network_Web",
-                    "title": "EV Network Web",
-                    "visible": true
+                    "visible": true,
+                    "format": "asLink(this.feature.properties.EV_Network_Web)"
                 },
                 {
                     "id": "geocode_status",
