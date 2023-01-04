@@ -168,6 +168,12 @@
             "titleAttribute": "Station_Name",
             "attributes": [
                 {
+                    "name": "GoogleMapLink",
+                    "title": "Google Map link",
+                    "visible": true,
+                    "format": "asLink('https://www.google.com/maps/dir//' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
+                },
+                {
                     "id": "fuel_type_code",
                     "name": "Fuel_Type_Code",
                     "title": "Fuel Type Code",
