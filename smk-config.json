@@ -168,8 +168,8 @@
             "titleAttribute": "Station_Name",
             "attributes": [
                 {
-                    "name": "GoogleMapLink",
-                    "title": "Google Map link",
+                    "name": "GoogleMapsDirections",
+                    "title": "Google Maps Directions",
                     "visible": true,
                     "format": "asLink('https://www.google.com/maps/dir//' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
                 },
