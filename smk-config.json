@@ -168,6 +168,12 @@
             "titleAttribute": "Station_Name",
             "attributes": [
                 {
+                    "name": "GoogleMapsDirections",
+                    "title": "Google Maps Directions",
+                    "visible": true,
+                    "format": "asLink('https://www.google.com/maps/dir//' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
+                },
+                {
                     "id": "fuel_type_code",
                     "name": "Fuel_Type_Code",
                     "title": "Fuel Type Code",
@@ -297,13 +303,8 @@
                     "id": "ev_network",
                     "name": "EV_Network",
                     "title": "EV Network",
-                    "visible": true
-                },
-                {
-                    "id": "ev_network_web",
-                    "name": "EV_Network_Web",
-                    "title": "EV Network Web",
-                    "visible": true
+                    "visible": true,
+                    "format": "asLink(this.feature.properties.EV_Network_Web)"
                 },
                 {
                     "id": "geocode_status",
