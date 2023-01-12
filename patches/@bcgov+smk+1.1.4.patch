@@ -1,0 +1,17 @@
+diff --git a/node_modules/@bcgov/smk/dist/smk.js b/node_modules/@bcgov/smk/dist/smk.js
+index f29393b..65a78e9 100644
+--- a/node_modules/@bcgov/smk/dist/smk.js
++++ b/node_modules/@bcgov/smk/dist/smk.js
+@@ -649,7 +649,6 @@ if ( skip ) return;
+             { loader: "script", url: "lib/leaflet/leaflet-geoman-2.13.0.min.js" },
+             { loader: "style", url: "lib/leaflet/leaflet-geoman-2.13.0.css" },
+             { loader: "script", url: "lib/leaflet/esri-leaflet-3.0.8.js" },
+-            { loader: "script", url: "lib/leaflet/esri-leaflet-renderers-3.0.0.js" },
+             { loader: "script", url: "lib/leaflet/esri-leaflet-legend-compat-src-2.0.1.js" },
+             { loader: "script", url: "lib/leaflet/esri-leaflet-vector-4.0.0.js" },
+             { loader: "asset", url: "lib/leaflet/images/layers-2x.png" },
+@@ -2082,4 +2081,3 @@ window.include.SMK = true
+     }
+ 
+ } )();
+-
