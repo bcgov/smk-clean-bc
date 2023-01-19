@@ -83,7 +83,7 @@
             "useClustering": false,
             "dataUrl": "./layers/evcs-stalls.geojson",
             "legend": {
-                "line": true
+                "point": true
             },
             "style": {
                 "strokeColor": "#7570b3",
@@ -145,7 +145,7 @@
             "useClustering": false,
             "dataUrl": "./layers/rpd-buildings.geojson",
             "legend": {
-                "line": true
+                "point": true
             },
             "style": {
                 "strokeColor": "#1b9e77",
