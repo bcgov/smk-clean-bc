@@ -174,12 +174,6 @@
                     "format": "asLink('https://www.google.com/maps/dir//' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
                 },
                 {
-                    "id": "fuel_type_code",
-                    "name": "Fuel_Type_Code",
-                    "title": "Fuel Type Code",
-                    "visible": true
-                },
-                {
                     "id": "station_name",
                     "name": "Station_Name",
                     "title": "Station Name",
@@ -195,6 +189,12 @@
                     "id": "intersection_directions",
                     "name": "Intersection_Directions",
                     "title": "Intersection Directions",
+                    "visible": true
+                },
+                {
+                    "id": "intersection_directions__french",
+                    "name": "Intersection_Directions__French",
+                    "title": "Intersection Directions - French",
                     "visible": true
                 },
                 {
@@ -246,9 +246,21 @@
                     "visible": true
                 },
                 {
+                    "id": "groups_with_access_code__french",
+                    "name": "Groups_With_Access_Code__French",
+                    "title": "Groups With Access Code - French",
+                    "visible": true
+                },
+                {
                     "id": "access_days_time",
                     "name": "Access_Days_Time",
                     "title": "Access Days Time",
+                    "visible": true
+                },
+                {
+                    "id": "access_days_time__french_",
+                    "name": "Access_Days_Time__French_",
+                    "title": "Access Days Time - French",
                     "visible": true
                 },
                 {
@@ -261,6 +273,12 @@
                     "id": "bd_blends",
                     "name": "BD_Blends",
                     "title": "BD Blends",
+                    "visible": true
+                },
+                {
+                    "id": "bd_blends__french_",
+                    "name": "BD_Blends__French_",
+                    "title": "BD Blends - French",
                     "visible": true
                 },
                 {
@@ -403,39 +421,9 @@
                     "visible": true
                 },
                 {
-                    "id": "intersection_directions__french",
-                    "name": "Intersection_Directions__French",
-                    "title": "Intersection Directions - French",
-                    "visible": true
-                },
-                {
-                    "id": "access_days_time__french_",
-                    "name": "Access_Days_Time__French_",
-                    "title": "Access Days Time - French",
-                    "visible": true
-                },
-                {
-                    "id": "bd_blends__french_",
-                    "name": "BD_Blends__French_",
-                    "title": "BD Blends - French",
-                    "visible": true
-                },
-                {
-                    "id": "groups_with_access_code__french",
-                    "name": "Groups_With_Access_Code__French",
-                    "title": "Groups With Access Code - French",
-                    "visible": true
-                },
-                {
                     "id": "hydrogen_is_retail",
                     "name": "Hydrogen_Is_Retail",
                     "title": "Hydrogen Is Retail",
-                    "visible": true
-                },
-                {
-                    "id": "access_code",
-                    "name": "Access_Code",
-                    "title": "Access Code",
                     "visible": true
                 },
                 {
