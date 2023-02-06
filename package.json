@@ -4,7 +4,7 @@
     "description": "A Simple Map Kit web application to assist Clean BC with routing to electric vehicle charging stations.",
     "author": "DataBC Map Team",
     "dependencies": {
-        "@bcgov/smk": "1.1.4",
+        "@bcgov/smk": "1.1.5",
         "http-server": "^14.1.1"
     },
     "scripts": {
