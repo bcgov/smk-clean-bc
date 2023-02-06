@@ -165,6 +165,9 @@
             "title": "Electric Charging Stations in Canada",
             "serviceUrl": "https://services.arcgis.com/zmLUiqh7X11gGV2d/arcgis/rest/services/alt_fuel_stations/FeatureServer/0",
             "where": "access_code='public'",
+            "hideLegends": [ 
+                "private"
+            ],
             "titleAttribute": "Station_Name",
             "attributes": [
                 {
