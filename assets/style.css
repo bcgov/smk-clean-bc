@@ -24,7 +24,7 @@ button, input {
     font-family: inherit;
 }
 
-header {
+.header {
     flex-shrink: 0;
     border-bottom: 2px solid #fcba19;
     background-color: #036;
@@ -33,12 +33,29 @@ header {
     background-position: 10px 5px;
     background-repeat: no-repeat;
 
-    padding-left: 275px;
     color: white;
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+@media only screen and (min-width: 480px) {
+    .header::after {
+        display: block;
+        padding-left: 275px;
+        content: "CleanBC Fleet Route Planner";
+     }
+  }
+
+@media only screen and (max-width: 479px) {
+    .header::after {
+       display: block;
+       font-size: 55%;
+       padding-left: 260px;
+       min-height: 40px;
+       content: "Fleet Route Planner";
+    }
+ }
 
 article {
     flex-grow: 1;
