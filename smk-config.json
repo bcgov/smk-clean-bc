@@ -86,18 +86,39 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "#7570b3",
+                "strokeColor": "#0000ff",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#7570b3",
+                "fillColor": "#0000ff",
                 "fillOpacity": 1,
                 "stroke": true,
                 "marker": true,
                 "markerUrl": null
-            }
+            }, 
+            "conditionalStyles": [
+                {
+                    "property": "Stall_Type",
+                    "conditions": [
+                        {
+                            "value": "EmVi Stall",
+                            "style": {
+                                "strokeColor": "#0000ff",
+                                "fillColor": "#0000ff"
+                            }
+                        },
+                        {
+                            "value": "Fleet EV Stall",
+                            "style": {
+                                "strokeColor": "#00ff00",
+                                "fillColor": "#00ff00"
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "vector",
