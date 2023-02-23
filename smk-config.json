@@ -180,403 +180,427 @@
             }
         },
         {
-            "type": "esri-feature",
-            "id": "EV_Stations_Canada",
+            "type": "vector",
+            "id": "electric-charging-stations-in-bc",
+            "title": "Electric Charging Stations in BC",
             "isVisible": true,
-            "title": "Electric Charging Stations in Canada",
-            "serviceUrl": "https://services.arcgis.com/zmLUiqh7X11gGV2d/arcgis/rest/services/alt_fuel_stations/FeatureServer/0",
-            "where": "access_code='public'",
-            "hideLegends": [ 
-                "private"
-            ],
-            "titleAttribute": "Station_Name",
+            "isQueryable": true,
+            "opacity": 0.65,
+            "minScale": null,
+            "maxScale": null,
+            "titleAttribute": "station_name",
             "attributes": [
                 {
                     "name": "GoogleMapsDirections",
                     "title": "Google Maps Directions",
                     "visible": true,
-                    "format": "asLink('https://www.google.com/maps/dir//' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
+                    "format": "asLink('https://www.google.com/maps/dir/' + this.feature.geometry.coordinates[1] + ',' + this.feature.geometry.coordinates[0])"
                 },
                 {
-                    "id": "station_name",
-                    "name": "Station_Name",
+                    "id": "station-name",
+                    "name": "station_name",
                     "title": "Station Name",
                     "visible": true
                 },
                 {
-                    "id": "street_address",
-                    "name": "Street_Address",
+                    "id": "street-address",
+                    "name": "street_address",
                     "title": "Street Address",
                     "visible": true
                 },
                 {
-                    "id": "intersection_directions",
-                    "name": "Intersection_Directions",
+                    "id": "intersection-directions",
+                    "name": "intersection_directions",
                     "title": "Intersection Directions",
                     "visible": true
                 },
                 {
-                    "id": "intersection_directions__french",
-                    "name": "Intersection_Directions__French",
+                    "id": "intersection-directions-fr",
+                    "name": "intersection_directions_fr",
                     "title": "Intersection Directions - French",
                     "visible": true
                 },
                 {
                     "id": "city",
-                    "name": "City",
+                    "name": "city",
                     "title": "City",
                     "visible": true
                 },
                 {
                     "id": "state",
-                    "name": "State",
+                    "name": "state",
                     "title": "State",
-                    "visible": true
+                    "visible": false
                 },
                 {
                     "id": "zip",
-                    "name": "ZIP",
+                    "name": "zip",
                     "title": "ZIP",
                     "visible": true
                 },
                 {
                     "id": "plus4",
-                    "name": "Plus4",
+                    "name": "plus4",
                     "title": "Plus4",
                     "visible": true
                 },
                 {
-                    "id": "station_phone",
-                    "name": "Station_Phone",
+                    "id": "station-phone",
+                    "name": "station_phone",
                     "title": "Station Phone",
                     "visible": true
                 },
                 {
-                    "id": "status_code",
-                    "name": "Status_Code",
+                    "id": "status-code",
+                    "name": "status_code",
                     "title": "Status Code",
                     "visible": true
                 },
                 {
-                    "id": "expected_date",
-                    "name": "Expected_Date",
+                    "id": "expected-date",
+                    "name": "expected_date",
                     "title": "Expected Date",
                     "visible": true
                 },
                 {
-                    "id": "groups_with_access_code",
-                    "name": "Groups_With_Access_Code",
+                    "id": "groups-with-access-code",
+                    "name": "groups_with_access_code",
                     "title": "Groups With Access Code",
                     "visible": true
                 },
                 {
-                    "id": "groups_with_access_code__french",
-                    "name": "Groups_With_Access_Code__French",
+                    "id": "groups-with-access-code-fr",
+                    "name": "groups_with_access_code_fr",
                     "title": "Groups With Access Code - French",
                     "visible": true
                 },
                 {
-                    "id": "access_days_time",
-                    "name": "Access_Days_Time",
+                    "id": "access-days-time",
+                    "name": "access_days_time",
                     "title": "Access Days Time",
                     "visible": true
                 },
                 {
-                    "id": "access_days_time__french_",
-                    "name": "Access_Days_Time__French_",
+                    "id": "access-days-time-fr",
+                    "name": "access_days_time_fr",
                     "title": "Access Days Time - French",
                     "visible": true
                 },
                 {
-                    "id": "cards_accepted",
-                    "name": "Cards_Accepted",
+                    "id": "cards-accepted",
+                    "name": "cards_accepted",
                     "title": "Cards Accepted",
                     "visible": true
                 },
                 {
-                    "id": "bd_blends",
-                    "name": "BD_Blends",
+                    "id": "bd-blends",
+                    "name": "bd_blends",
                     "title": "BD Blends",
                     "visible": true
                 },
                 {
-                    "id": "bd_blends__french_",
-                    "name": "BD_Blends__French_",
+                    "id": "bd-blends-fr",
+                    "name": "bd_blends_fr",
                     "title": "BD Blends - French",
                     "visible": true
                 },
                 {
-                    "id": "ng_fill_type_code",
-                    "name": "NG_Fill_Type_Code",
+                    "id": "ng-fill-type-code",
+                    "name": "ng_fill_type_code",
                     "title": "NG Fill Type Code",
                     "visible": true
                 },
                 {
-                    "id": "ng_psi",
-                    "name": "NG_PSI",
+                    "id": "ng-psi",
+                    "name": "ng_psi",
                     "title": "NG PSI",
                     "visible": true
                 },
                 {
-                    "id": "ev_level1_evse_num",
-                    "name": "EV_Level1_EVSE_Num",
+                    "id": "ev-level1-evse-num",
+                    "name": "ev_level1_evse_num",
                     "title": "EV Level1 EVSE Num",
                     "visible": true
                 },
                 {
-                    "id": "ev_level2_evse_num",
-                    "name": "EV_Level2_EVSE_Num",
+                    "id": "ev-level2-evse-num",
+                    "name": "ev_level2_evse_num",
                     "title": "EV Level2 EVSE Num",
                     "visible": true
                 },
                 {
-                    "id": "ev_dc_fast_count",
-                    "name": "EV_DC_Fast_Count",
-                    "title": "EV DC Fast Count",
+                    "id": "ev-dc-fast-num",
+                    "name": "ev_dc_fast_num",
+                    "title": "EV DC Fast Number",
                     "visible": true
                 },
                 {
-                    "id": "ev_other_info",
-                    "name": "EV_Other_Info",
-                    "title": "EV Other Info",
+                    "id": "ev-other-evse",
+                    "name": "ev_other_evse",
+                    "title": "EV Other EVSE",
                     "visible": true
                 },
                 {
-                    "id": "ev_network",
-                    "name": "EV_Network",
+                    "id": "ev-network",
+                    "name": "ev_network",
                     "title": "EV Network",
                     "visible": true,
-                    "format": "asLink(this.feature.properties.EV_Network_Web)"
+                    "format": "asLink(this.feature.properties.ev_network_web)"
                 },
                 {
-                    "id": "geocode_status",
-                    "name": "Geocode_Status",
+                    "id": "ev-network-web",
+                    "name": "ev_network_web",
+                    "title": "ev_network_web",
+                    "visible": false
+                },
+                {
+                    "id": "geocode-status",
+                    "name": "geocode_status",
                     "title": "Geocode Status",
                     "visible": true
                 },
                 {
-                    "id": "latitude",
-                    "name": "Latitude",
-                    "title": "Latitude",
-                    "visible": true
-                },
-                {
-                    "id": "longitude",
-                    "name": "Longitude",
-                    "title": "Longitude",
-                    "visible": true
-                },
-                {
-                    "id": "date_last_confirmed",
-                    "name": "Date_Last_Confirmed",
+                    "id": "date-last-confirmed",
+                    "name": "date_last_confirmed",
                     "title": "Date Last Confirmed",
                     "visible": true
                 },
                 {
                     "id": "id",
-                    "name": "ID",
+                    "name": "id",
                     "title": "ID",
-                    "visible": true
+                    "visible": false
                 },
                 {
-                    "id": "updated_at",
-                    "name": "Updated_At",
+                    "id": "updated-at",
+                    "name": "updated_at",
                     "title": "Updated At",
                     "visible": true
                 },
                 {
-                    "id": "owner_type_code",
-                    "name": "Owner_Type_Code",
+                    "id": "owner-type-code",
+                    "name": "owner_type_code",
                     "title": "Owner Type Code",
                     "visible": true
                 },
                 {
-                    "id": "federal_agency_id",
-                    "name": "Federal_Agency_ID",
-                    "title": "Federal Agency ID",
-                    "visible": true
-                },
-                {
-                    "id": "federal_agency_name",
-                    "name": "Federal_Agency_Name",
-                    "title": "Federal Agency Name",
-                    "visible": true
-                },
-                {
-                    "id": "open_date",
-                    "name": "Open_Date",
+                    "id": "open-date",
+                    "name": "open_date",
                     "title": "Open Date",
                     "visible": true
                 },
                 {
-                    "id": "hydrogen_status_link",
-                    "name": "Hydrogen_Status_Link",
-                    "title": "Hydrogen Status Link",
-                    "visible": true
-                },
-                {
-                    "id": "ng_vehicle_class",
-                    "name": "NG_Vehicle_Class",
+                    "id": "ng-vehicle-class",
+                    "name": "ng_vehicle_class",
                     "title": "NG Vehicle Class",
                     "visible": true
                 },
                 {
-                    "id": "lpg_primary",
-                    "name": "LPG_Primary",
+                    "id": "lpg-primary",
+                    "name": "lpg_primary",
                     "title": "LPG Primary",
                     "visible": true
                 },
                 {
-                    "id": "e85_blender_pump",
-                    "name": "E85_Blender_Pump",
+                    "id": "e85-blender-pump",
+                    "name": "e85_blender_pump",
                     "title": "E85 Blender Pump",
                     "visible": true
                 },
                 {
-                    "id": "ev_connector_types",
-                    "name": "EV_Connector_Types",
+                    "id": "ev-connector-types",
+                    "name": "ev_connector_types",
                     "title": "EV Connector Types",
                     "visible": true
                 },
                 {
                     "id": "country",
-                    "name": "Country",
+                    "name": "country",
                     "title": "Country",
-                    "visible": true
+                    "visible": false
                 },
                 {
-                    "id": "hydrogen_is_retail",
-                    "name": "Hydrogen_Is_Retail",
-                    "title": "Hydrogen Is Retail",
-                    "visible": true
-                },
-                {
-                    "id": "access_detail_code",
-                    "name": "Access_Detail_Code",
-                    "title": "Access Detail Code",
-                    "visible": true
-                },
-                {
-                    "id": "federal_agency_code",
-                    "name": "Federal_Agency_Code",
-                    "title": "Federal Agency Code",
-                    "visible": true
-                },
-                {
-                    "id": "facility_type",
-                    "name": "Facility_Type",
+                    "id": "facility-type",
+                    "name": "facility_type",
                     "title": "Facility Type",
                     "visible": true
                 },
                 {
-                    "id": "cng_dispenser_num",
-                    "name": "CNG_Dispenser_Num",
-                    "title": "CNG Dispenser Num",
+                    "id": "cng-dispenser-num",
+                    "name": "cng_dispenser_num",
+                    "title": "CNG Dispenser Number",
                     "visible": true
                 },
                 {
-                    "id": "cng_on_site_renewable_source",
-                    "name": "CNG_On_Site_Renewable_Source",
-                    "title": "CNG On Site Renewable Source",
+                    "id": "cng-total-compression",
+                    "name": "cng_total_compression",
+                    "title": "CNG Total Compression",
                     "visible": true
                 },
                 {
-                    "id": "cng_total_compression_capacity",
-                    "name": "CNG_Total_Compression_Capacity",
-                    "title": "CNG Total Compression Capacity",
+                    "id": "cng-total-storage",
+                    "name": "cng_total_storage",
+                    "title": "CNG Total Storage",
                     "visible": true
                 },
                 {
-                    "id": "cng_storage_capacity",
-                    "name": "CNG_Storage_Capacity",
-                    "title": "CNG Storage Capacity",
-                    "visible": true
-                },
-                {
-                    "id": "lng_on_site_renewable_source",
-                    "name": "LNG_On_Site_Renewable_Source",
-                    "title": "LNG On Site Renewable Source",
-                    "visible": true
-                },
-                {
-                    "id": "e85_other_ethanol_blends",
-                    "name": "E85_Other_Ethanol_Blends",
+                    "id": "e85-other-ethanol-blends",
+                    "name": "e85_other_ethanol_blends",
                     "title": "E85 Other Ethanol Blends",
                     "visible": true
                 },
                 {
-                    "id": "ev_pricing",
-                    "name": "EV_Pricing",
+                    "id": "ev-pricing",
+                    "name": "ev_pricing",
                     "title": "EV Pricing",
                     "visible": true
                 },
                 {
-                    "id": "ev_pricing__french_",
-                    "name": "EV_Pricing__French_",
+                    "id": "ev-pricing-fr",
+                    "name": "ev_pricing_fr",
                     "title": "EV Pricing - French",
                     "visible": true
                 },
                 {
-                    "id": "lpg_nozzle_types",
-                    "name": "LPG_Nozzle_Types",
+                    "id": "lpg-nozzle-types",
+                    "name": "lpg_nozzle_types",
                     "title": "LPG Nozzle Types",
                     "visible": true
                 },
                 {
-                    "id": "hydrogen_pressures",
-                    "name": "Hydrogen_Pressures",
-                    "title": "Hydrogen Pressures",
-                    "visible": true
-                },
-                {
-                    "id": "hydrogen_standards",
-                    "name": "Hydrogen_Standards",
-                    "title": "Hydrogen Standards",
-                    "visible": true
-                },
-                {
-                    "id": "cng_fill_type_code",
-                    "name": "CNG_Fill_Type_Code",
+                    "id": "cng-fill-type-code",
+                    "name": "cng_fill_type_code",
                     "title": "CNG Fill Type Code",
                     "visible": true
                 },
                 {
-                    "id": "cng_psi",
-                    "name": "CNG_PSI",
+                    "id": "cng-psi",
+                    "name": "cng_psi",
                     "title": "CNG PSI",
                     "visible": true
                 },
                 {
-                    "id": "cng_vehicle_class",
-                    "name": "CNG_Vehicle_Class",
-                    "title": "CNG Vehicle Class",
+                    "id": "access-code",
+                    "name": "access_code",
+                    "title": "Access Code",
+                    "visible": false
+                },
+                {
+                    "id": "access-detail-code",
+                    "name": "access_detail_code",
+                    "title": "Access Detail Code",
                     "visible": true
                 },
                 {
-                    "id": "lng_vehicle_class",
-                    "name": "LNG_Vehicle_Class",
-                    "title": "LNG Vehicle Class",
-                    "visible": true
+                    "id": "fuel-type-code",
+                    "name": "fuel_type_code",
+                    "title": "Fuel Type Code",
+                    "visible": false
                 },
                 {
-                    "id": "ev_on_site_renewable_source",
-                    "name": "EV_On_Site_Renewable_Source",
-                    "title": "EV On Site Renewable Source",
-                    "visible": true
-                },
-                {
-                    "id": "restricted_access",
-                    "name": "Restricted_Access",
+                    "id": "restricted-access",
+                    "name": "restricted_access",
                     "title": "Restricted Access",
                     "visible": true
                 },
                 {
-                    "id": "fid",
-                    "name": "FID",
-                    "title": "FID",
-                    "visible": false
+                    "id": "cng-renewable-source",
+                    "name": "cng_renewable_source",
+                    "title": "CNG Renewable Source",
+                    "visible": true
+                },
+                {
+                    "id": "cng-vehicle-class",
+                    "name": "cng_vehicle_class",
+                    "title": "CNG Vehicle Class",
+                    "visible": true
+                },
+                {
+                    "id": "ev-renewable-source",
+                    "name": "ev_renewable_source",
+                    "title": "EV Renewable Source",
+                    "visible": true
+                },
+                {
+                    "id": "hy-is-retail",
+                    "name": "hy_is_retail",
+                    "title": "HY Is Retail",
+                    "visible": true
+                },
+                {
+                    "id": "hy-pressures",
+                    "name": "hy_pressures",
+                    "title": "HY Pressures",
+                    "visible": true
+                },
+                {
+                    "id": "hy-standards",
+                    "name": "hy_standards",
+                    "title": "HY Standards",
+                    "visible": true
+                },
+                {
+                    "id": "hy-status-link",
+                    "name": "hy_status_link",
+                    "title": "HY Status Link",
+                    "visible": true
+                },
+                {
+                    "id": "lng-renewable-source",
+                    "name": "lng_renewable_source",
+                    "title": "LNG Renewable Source",
+                    "visible": true
+                },
+                {
+                    "id": "lng-vehicle-class",
+                    "name": "lng_vehicle_class",
+                    "title": "LNG Vehicle Class",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blends",
+                    "name": "rd_blends",
+                    "title": "RD Blends",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blends-fr",
+                    "name": "rd_blends_fr",
+                    "title": "RD Blends - French",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blended-with-biodiesel",
+                    "name": "rd_blended_with_biodiesel",
+                    "title": "RD Blended With Biodiesel",
+                    "visible": true
+                },
+                {
+                    "id": "rd-max-biodiesel-level",
+                    "name": "rd_max_biodiesel_level",
+                    "title": "RD Max Biodiesel Level",
+                    "visible": true
                 }
-            ]
+            ],
+            "queries": null,
+            "useClustering": false,
+            "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC",
+            "legend": {
+                "point": true
+            },
+            "style": {
+                "strokeColor": "orange",
+                "strokeOpacity": 1,
+                "strokeWidth": 6,
+                "strokeCap": "round",
+                "strokeJoin": "round",
+                "fill": true,
+                "fillColor": "orange",
+                "fillOpacity": 1,
+                "stroke": true,
+                "marker": true,
+                "markerUrl": null
+            }
         }
     ],
     "tools": [
@@ -635,7 +659,8 @@
                     "isVisible": true
                 },
                 {
-                    "id": "EV_Stations_Canada"
+                    "id": "electric-charging-stations-in-bc",
+                    "isVisible": true
                 }
             ]
         },
