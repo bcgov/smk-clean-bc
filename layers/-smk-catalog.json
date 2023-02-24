@@ -91,6 +91,397 @@
                 }
             ],
             "dataUrl": "./layers/evcs-stalls.geojson"
+        },
+        {
+            "title": "Electric Charging Stations in BC",
+            "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC",
+            "id": "electric-charging-stations-in-bc",
+            "attributes": [
+                {
+                    "id": "access-code",
+                    "name": "access_code",
+                    "title": "access_code",
+                    "visible": true
+                },
+                {
+                    "id": "access-days-time",
+                    "name": "access_days_time",
+                    "title": "access_days_time",
+                    "visible": true
+                },
+                {
+                    "id": "access-detail-code",
+                    "name": "access_detail_code",
+                    "title": "access_detail_code",
+                    "visible": true
+                },
+                {
+                    "id": "cards-accepted",
+                    "name": "cards_accepted",
+                    "title": "cards_accepted",
+                    "visible": true
+                },
+                {
+                    "id": "date-last-confirmed",
+                    "name": "date_last_confirmed",
+                    "title": "date_last_confirmed",
+                    "visible": true
+                },
+                {
+                    "id": "expected-date",
+                    "name": "expected_date",
+                    "title": "expected_date",
+                    "visible": true
+                },
+                {
+                    "id": "fuel-type-code",
+                    "name": "fuel_type_code",
+                    "title": "fuel_type_code",
+                    "visible": true
+                },
+                {
+                    "id": "groups-with-access-code",
+                    "name": "groups_with_access_code",
+                    "title": "groups_with_access_code",
+                    "visible": true
+                },
+                {
+                    "id": "id",
+                    "name": "id",
+                    "title": "id",
+                    "visible": true
+                },
+                {
+                    "id": "open-date",
+                    "name": "open_date",
+                    "title": "open_date",
+                    "visible": true
+                },
+                {
+                    "id": "owner-type-code",
+                    "name": "owner_type_code",
+                    "title": "owner_type_code",
+                    "visible": true
+                },
+                {
+                    "id": "status-code",
+                    "name": "status_code",
+                    "title": "status_code",
+                    "visible": true
+                },
+                {
+                    "id": "restricted-access",
+                    "name": "restricted_access",
+                    "title": "restricted_access",
+                    "visible": true
+                },
+                {
+                    "id": "station-name",
+                    "name": "station_name",
+                    "title": "station_name",
+                    "visible": true
+                },
+                {
+                    "id": "station-phone",
+                    "name": "station_phone",
+                    "title": "station_phone",
+                    "visible": true
+                },
+                {
+                    "id": "updated-at",
+                    "name": "updated_at",
+                    "title": "updated_at",
+                    "visible": true
+                },
+                {
+                    "id": "facility-type",
+                    "name": "facility_type",
+                    "title": "facility_type",
+                    "visible": true
+                },
+                {
+                    "id": "geocode-status",
+                    "name": "geocode_status",
+                    "title": "geocode_status",
+                    "visible": true
+                },
+                {
+                    "id": "city",
+                    "name": "city",
+                    "title": "city",
+                    "visible": true
+                },
+                {
+                    "id": "intersection-directions",
+                    "name": "intersection_directions",
+                    "title": "intersection_directions",
+                    "visible": true
+                },
+                {
+                    "id": "plus4",
+                    "name": "plus4",
+                    "title": "plus4",
+                    "visible": true
+                },
+                {
+                    "id": "state",
+                    "name": "state",
+                    "title": "state",
+                    "visible": true
+                },
+                {
+                    "id": "street-address",
+                    "name": "street_address",
+                    "title": "street_address",
+                    "visible": true
+                },
+                {
+                    "id": "zip",
+                    "name": "zip",
+                    "title": "zip",
+                    "visible": true
+                },
+                {
+                    "id": "country",
+                    "name": "country",
+                    "title": "country",
+                    "visible": true
+                },
+                {
+                    "id": "bd-blends",
+                    "name": "bd_blends",
+                    "title": "bd_blends",
+                    "visible": true
+                },
+                {
+                    "id": "cng-dispenser-num",
+                    "name": "cng_dispenser_num",
+                    "title": "cng_dispenser_num",
+                    "visible": true
+                },
+                {
+                    "id": "cng-fill-type-code",
+                    "name": "cng_fill_type_code",
+                    "title": "cng_fill_type_code",
+                    "visible": true
+                },
+                {
+                    "id": "cng-psi",
+                    "name": "cng_psi",
+                    "title": "cng_psi",
+                    "visible": true
+                },
+                {
+                    "id": "cng-renewable-source",
+                    "name": "cng_renewable_source",
+                    "title": "cng_renewable_source",
+                    "visible": true
+                },
+                {
+                    "id": "cng-total-compression",
+                    "name": "cng_total_compression",
+                    "title": "cng_total_compression",
+                    "visible": true
+                },
+                {
+                    "id": "cng-total-storage",
+                    "name": "cng_total_storage",
+                    "title": "cng_total_storage",
+                    "visible": true
+                },
+                {
+                    "id": "cng-vehicle-class",
+                    "name": "cng_vehicle_class",
+                    "title": "cng_vehicle_class",
+                    "visible": true
+                },
+                {
+                    "id": "e85-blender-pump",
+                    "name": "e85_blender_pump",
+                    "title": "e85_blender_pump",
+                    "visible": true
+                },
+                {
+                    "id": "e85-other-ethanol-blends",
+                    "name": "e85_other_ethanol_blends",
+                    "title": "e85_other_ethanol_blends",
+                    "visible": true
+                },
+                {
+                    "id": "ev-connector-types",
+                    "name": "ev_connector_types",
+                    "title": "ev_connector_types",
+                    "visible": true
+                },
+                {
+                    "id": "ev-dc-fast-num",
+                    "name": "ev_dc_fast_num",
+                    "title": "ev_dc_fast_num",
+                    "visible": true
+                },
+                {
+                    "id": "ev-level1-evse-num",
+                    "name": "ev_level1_evse_num",
+                    "title": "ev_level1_evse_num",
+                    "visible": true
+                },
+                {
+                    "id": "ev-level2-evse-num",
+                    "name": "ev_level2_evse_num",
+                    "title": "ev_level2_evse_num",
+                    "visible": true
+                },
+                {
+                    "id": "ev-network",
+                    "name": "ev_network",
+                    "title": "ev_network",
+                    "visible": true
+                },
+                {
+                    "id": "ev-network-web",
+                    "name": "ev_network_web",
+                    "title": "ev_network_web",
+                    "visible": true
+                },
+                {
+                    "id": "ev-other-evse",
+                    "name": "ev_other_evse",
+                    "title": "ev_other_evse",
+                    "visible": true
+                },
+                {
+                    "id": "ev-pricing",
+                    "name": "ev_pricing",
+                    "title": "ev_pricing",
+                    "visible": true
+                },
+                {
+                    "id": "ev-renewable-source",
+                    "name": "ev_renewable_source",
+                    "title": "ev_renewable_source",
+                    "visible": true
+                },
+                {
+                    "id": "hy-is-retail",
+                    "name": "hy_is_retail",
+                    "title": "hy_is_retail",
+                    "visible": true
+                },
+                {
+                    "id": "hy-pressures",
+                    "name": "hy_pressures",
+                    "title": "hy_pressures",
+                    "visible": true
+                },
+                {
+                    "id": "hy-standards",
+                    "name": "hy_standards",
+                    "title": "hy_standards",
+                    "visible": true
+                },
+                {
+                    "id": "hy-status-link",
+                    "name": "hy_status_link",
+                    "title": "hy_status_link",
+                    "visible": true
+                },
+                {
+                    "id": "lng-renewable-source",
+                    "name": "lng_renewable_source",
+                    "title": "lng_renewable_source",
+                    "visible": true
+                },
+                {
+                    "id": "lng-vehicle-class",
+                    "name": "lng_vehicle_class",
+                    "title": "lng_vehicle_class",
+                    "visible": true
+                },
+                {
+                    "id": "lpg-primary",
+                    "name": "lpg_primary",
+                    "title": "lpg_primary",
+                    "visible": true
+                },
+                {
+                    "id": "lpg-nozzle-types",
+                    "name": "lpg_nozzle_types",
+                    "title": "lpg_nozzle_types",
+                    "visible": true
+                },
+                {
+                    "id": "ng-fill-type-code",
+                    "name": "ng_fill_type_code",
+                    "title": "ng_fill_type_code",
+                    "visible": true
+                },
+                {
+                    "id": "ng-psi",
+                    "name": "ng_psi",
+                    "title": "ng_psi",
+                    "visible": true
+                },
+                {
+                    "id": "ng-vehicle-class",
+                    "name": "ng_vehicle_class",
+                    "title": "ng_vehicle_class",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blends",
+                    "name": "rd_blends",
+                    "title": "rd_blends",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blends-fr",
+                    "name": "rd_blends_fr",
+                    "title": "rd_blends_fr",
+                    "visible": true
+                },
+                {
+                    "id": "rd-blended-with-biodiesel",
+                    "name": "rd_blended_with_biodiesel",
+                    "title": "rd_blended_with_biodiesel",
+                    "visible": true
+                },
+                {
+                    "id": "rd-max-biodiesel-level",
+                    "name": "rd_max_biodiesel_level",
+                    "title": "rd_max_biodiesel_level",
+                    "visible": true
+                },
+                {
+                    "id": "access-days-time-fr",
+                    "name": "access_days_time_fr",
+                    "title": "access_days_time_fr",
+                    "visible": true
+                },
+                {
+                    "id": "intersection-directions-fr",
+                    "name": "intersection_directions_fr",
+                    "title": "intersection_directions_fr",
+                    "visible": true
+                },
+                {
+                    "id": "bd-blends-fr",
+                    "name": "bd_blends_fr",
+                    "title": "bd_blends_fr",
+                    "visible": true
+                },
+                {
+                    "id": "groups-with-access-code-fr",
+                    "name": "groups_with_access_code_fr",
+                    "title": "groups_with_access_code_fr",
+                    "visible": true
+                },
+                {
+                    "id": "ev-pricing-fr",
+                    "name": "ev_pricing_fr",
+                    "title": "ev_pricing_fr",
+                    "visible": true
+                }
+            ]
         }
     ]
 }
