@@ -254,7 +254,7 @@
                     "id": "status-code",
                     "name": "status_code",
                     "title": "Status Code",
-                    "visible": true
+                    "visible": false
                 },
                 {
                     "id": "expected-date",
@@ -319,19 +319,19 @@
                 {
                     "id": "ev-level1-evse-num",
                     "name": "ev_level1_evse_num",
-                    "title": "EV Level1 EVSE Num",
+                    "title": "EV Level1 EVSE Ports",
                     "visible": true
                 },
                 {
                     "id": "ev-level2-evse-num",
                     "name": "ev_level2_evse_num",
-                    "title": "EV Level2 EVSE Num",
+                    "title": "EV Level2 EVSE Ports",
                     "visible": true
                 },
                 {
                     "id": "ev-dc-fast-num",
                     "name": "ev_dc_fast_num",
-                    "title": "EV DC Fast Number",
+                    "title": "EV DC Fast Ports",
                     "visible": true
                 },
                 {
@@ -584,7 +584,7 @@
             ],
             "queries": null,
             "useClustering": false,
-            "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC",
+            "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC&status=E",
             "legend": {
                 "point": true
             },
@@ -600,7 +600,21 @@
                 "stroke": true,
                 "marker": true,
                 "markerUrl": null
-            }
+            },
+            "conditionalStyles": [
+                {
+                    "property": "ev_dc_fast_num",
+                    "conditions": [
+                        {
+                            "operator": ">=",
+                            "value": 1,
+                            "style": {
+                                "strokeColor": "white"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "tools": [
