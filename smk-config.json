@@ -103,6 +103,7 @@
                     "property": "Stall_Type",
                     "conditions": [
                         {
+                            "label": "EmVi Stall",
                             "value": "EmVi Stall",
                             "style": {
                                 "strokeColor": "#0000ff",
@@ -110,6 +111,7 @@
                             }
                         },
                         {
+                            "label": "Fleet EV Stall",
                             "value": "Fleet EV Stall",
                             "style": {
                                 "strokeColor": "#00ff00",
@@ -606,6 +608,7 @@
                     "property": "ev_dc_fast_num",
                     "conditions": [
                         {
+                            "label": "DC Fast Charging Stations",
                             "operator": ">=",
                             "value": 1,
                             "style": {
