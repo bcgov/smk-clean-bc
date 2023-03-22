@@ -53,8 +53,8 @@ jobs:
         GHCR_USER: ${{ secrets.GHCR_USER }}
         GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
         DOCKER_REGISTRY: 'docker.pkg.github.com'
-        PR_REVIEWERS: '["dgboss", "NicoledeGreef"]'
-        PR_MENTIONS: '["dgboss", "NicoledeGreef"]'
+        PR_REVIEWERS: '["michaelpnelson", "rustyjux"]'
+        PR_MENTIONS: '["michaelpnelson", "rustyjux"]'
 
     # Add configMap with routing api key to the deployment config
     - name: Login to Dev Openshift
