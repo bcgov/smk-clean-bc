@@ -89,7 +89,8 @@
             "useClustering": false,
             "dataUrl": "./layers/evcs-stalls.geojson",
             "legend": {
-                "point": true
+                "point": true,
+                "excludeOtherLegendWithDefaultStyling": true
             },
             "style": {
                 "strokeColor": "#0000ff",
