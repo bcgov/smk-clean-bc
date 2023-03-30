@@ -103,16 +103,16 @@
                     "property": "Stall_Type",
                     "conditions": [
                         {
-                            "label": "EmVi Stall",
-                            "value": "EmVi Stall",
+                            "label": "Employee/Public",
+                            "value": "Employee/Public",
                             "style": {
                                 "strokeColor": "#0000ff",
                                 "fillColor": "#0000ff"
                             }
                         },
                         {
-                            "label": "Fleet EV Stall",
-                            "value": "Fleet EV Stall",
+                            "label": "Fleet",
+                            "value": "Fleet",
                             "style": {
                                 "strokeColor": "#00ff00",
                                 "fillColor": "#00ff00"
