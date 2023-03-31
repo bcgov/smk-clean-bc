@@ -103,16 +103,16 @@
                     "property": "Stall_Type",
                     "conditions": [
                         {
-                            "label": "EmVi Stall",
-                            "value": "EmVi Stall",
+                            "label": "Employee/Public",
+                            "value": "Employee/Public",
                             "style": {
                                 "strokeColor": "#0000ff",
                                 "fillColor": "#0000ff"
                             }
                         },
                         {
-                            "label": "Fleet EV Stall",
-                            "value": "Fleet EV Stall",
+                            "label": "Fleet",
+                            "value": "Fleet",
                             "style": {
                                 "strokeColor": "#00ff00",
                                 "fillColor": "#00ff00"
@@ -131,7 +131,7 @@
             "opacity": 0.65,
             "minScale": null,
             "maxScale": null,
-            "titleAttribute": "Bldng_ID",
+            "titleAttribute": "Bldg_ID",
             "attributes": [
                 {
                     "id": "fid",
@@ -140,14 +140,14 @@
                     "visible": false
                 },
                 {
-                    "id": "bldng-id",
-                    "name": "Bldng_ID",
+                    "id": "bldg-id",
+                    "name": "Bldg_ID",
                     "title": "Building #",
                     "visible": true
                 },
                 {
-                    "id": "bldng-type",
-                    "name": "Bldng_Type",
+                    "id": "bldg-type",
+                    "name": "Bldg_Type",
                     "title": "Building Type",
                     "visible": true
                 },
