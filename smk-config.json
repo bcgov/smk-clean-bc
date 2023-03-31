@@ -28,7 +28,7 @@
             "opacity": 0.65,
             "minScale": null,
             "maxScale": null,
-            "titleAttribute": "Stall_Type",
+            "titleAttribute": "Charger_ID",
             "attributes": [
                 {
                     "id": "fid",
@@ -67,15 +67,21 @@
                     "visible": true
                 },
                 {
-                    "id": "fleet-ev",
-                    "name": "Fleet_EV",
-                    "title": "Fleet EV",
+                    "id": "network",
+                    "name": "Network",
+                    "title": "Network",
                     "visible": true
                 },
                 {
-                    "id": "emvi-ev",
-                    "name": "EmVi_EV",
-                    "title": "EmVi EV",
+                    "id": "number",
+                    "name": "Number",
+                    "title": "Number",
+                    "visible": true
+                },
+                {
+                    "id": "charger-id",
+                    "name": "Charger_ID",
+                    "title": "Charger ID",
                     "visible": true
                 }
             ],
