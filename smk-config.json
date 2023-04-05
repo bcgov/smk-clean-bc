@@ -93,13 +93,13 @@
                 "excludeOtherLegendWithDefaultStyling": true
             },
             "style": {
-                "strokeColor": "#567cb3",
+                "strokeColor": "#327fc3",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#567cb3",
+                "fillColor": "#327fc3",
                 "fillOpacity": 1,
                 "stroke": true,
                 "marker": true,
@@ -113,8 +113,8 @@
                             "label": "Employee/Public",
                             "value": "Employee/Public",
                             "style": {
-                                "strokeColor": "#567cb3",
-                                "fillColor": "#567cb3"
+                                "strokeColor": "#327fc3",
+                                "fillColor": "#327fc3"
                             }
                         },
                         {
@@ -178,13 +178,13 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "#0f733a",
+                "strokeColor": "#3f8f28",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#0f733a",
+                "fillColor": "#3f8f28",
                 "fillOpacity": 1
             }
         },
@@ -598,13 +598,13 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "#b86b0d",
+                "strokeColor": "#d05525",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#b86b0d",
+                "fillColor": "#d05525",
                 "fillOpacity": 1,
                 "stroke": true,
                 "marker": true,
