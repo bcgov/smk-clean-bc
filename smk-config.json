@@ -619,7 +619,7 @@
                             "operator": ">=",
                             "value": 1,
                             "style": {
-                                "strokeColor": "white"
+                                "fillColor": "white"
                             }
                         }
                     ]
