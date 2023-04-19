@@ -95,7 +95,7 @@
             "style": {
                 "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
@@ -180,7 +180,7 @@
             "style": {
                 "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
@@ -600,7 +600,7 @@
             "style": {
                 "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
