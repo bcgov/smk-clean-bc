@@ -93,7 +93,7 @@
                 "excludeOtherLegendWithDefaultStyling": true
             },
             "style": {
-                "strokeColor": "black",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
@@ -113,7 +113,7 @@
                             "label": "Employee/Public",
                             "value": "Employee/Public",
                             "style": {
-                                "strokeColor": "black",
+                                "strokeColor": "white",
                                 "fillColor": "#327fc3"
                             }
                         },
@@ -121,8 +121,8 @@
                             "label": "Fleet",
                             "value": "Fleet",
                             "style": {
-                                "strokeColor": "black",
-                                "fillColor": "#00ff00"
+                                "strokeColor": "white",
+                                "fillColor": "#7e6376"
                             }
                         }
                     ]
@@ -178,7 +178,7 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "black",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
@@ -598,7 +598,7 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "black",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
                 "strokeWidth": 6,
                 "strokeCap": "round",
