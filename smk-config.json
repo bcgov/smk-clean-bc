@@ -93,13 +93,13 @@
                 "excludeOtherLegendWithDefaultStyling": true
             },
             "style": {
-                "strokeColor": "#0000ff",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#0000ff",
+                "fillColor": "#327fc3",
                 "fillOpacity": 1,
                 "stroke": true,
                 "marker": true,
@@ -113,16 +113,16 @@
                             "label": "Employee/Public",
                             "value": "Employee/Public",
                             "style": {
-                                "strokeColor": "#0000ff",
-                                "fillColor": "#0000ff"
+                                "strokeColor": "white",
+                                "fillColor": "#327fc3"
                             }
                         },
                         {
                             "label": "Fleet",
                             "value": "Fleet",
                             "style": {
-                                "strokeColor": "#00ff00",
-                                "fillColor": "#00ff00"
+                                "strokeColor": "white",
+                                "fillColor": "#7e6376"
                             }
                         }
                     ]
@@ -178,13 +178,13 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "#1b9e77",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "#1b9e77",
+                "fillColor": "#3f8f28",
                 "fillOpacity": 1
             }
         },
@@ -598,13 +598,13 @@
                 "point": true
             },
             "style": {
-                "strokeColor": "orange",
+                "strokeColor": "white",
                 "strokeOpacity": 1,
-                "strokeWidth": 6,
+                "strokeWidth": 9,
                 "strokeCap": "round",
                 "strokeJoin": "round",
                 "fill": true,
-                "fillColor": "orange",
+                "fillColor": "#d05525",
                 "fillOpacity": 1,
                 "stroke": true,
                 "marker": true,
@@ -619,7 +619,8 @@
                             "operator": ">=",
                             "value": 1,
                             "style": {
-                                "strokeColor": "white"
+                                "strokeColor": "#d05525",
+                                "fillColor": "white"
                             }
                         }
                     ]
