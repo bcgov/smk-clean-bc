@@ -22,7 +22,7 @@
         {
             "type": "vector",
             "id": "evcs-stalls",
-            "title": "Ministry EVCS",
+            "title": "Government Charging Stations",
             "isVisible": true,
             "isQueryable": true,
             "opacity": 0.65,
@@ -132,7 +132,7 @@
         {
             "type": "vector",
             "id": "rpd-buildings",
-            "title": "RPD Buildings",
+            "title": "Government Buildings",
             "isVisible": true,
             "isQueryable": true,
             "opacity": 0.65,
@@ -595,7 +595,8 @@
             "useClustering": false,
             "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC&status=E",
             "legend": {
-                "point": true
+                "point": true, 
+                "otherLegendLabelOverride": "Charging Stations"
             },
             "style": {
                 "strokeColor": "white",
