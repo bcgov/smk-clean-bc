@@ -620,7 +620,7 @@
                             "operator": ">=",
                             "value": 1,
                             "style": {
-                                "strokeColor": "#387780",
+                                "strokeColor": "#d05525",
                                 "fillColor": "white"
                             }
                         }
@@ -648,7 +648,7 @@
             "enabled": true
         },
         {
-            "order": 1,
+            "order": 10,
             "position": "list-menu",
             "icon": "help",
             "title": "About Clean BC",
@@ -657,7 +657,7 @@
             "enabled": true
         },
         {
-            "order": 3,
+            "order": 2,
             "position": [
                 "shortcut-menu",
                 "list-menu"
@@ -742,6 +742,7 @@
         },
         {
             "type": "directions",
+            "order": 1,
             "enabled": true,
             "command": {
                 "optimal": false,
@@ -783,7 +784,7 @@
             "enabled": true
         },
         {
-            "order": 1,
+            "order": 11,
             "position": "list-menu",
             "icon": "help",
             "title": "How to use the Route Planner",
