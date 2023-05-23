@@ -15,6 +15,7 @@
             ],
             "zoom": 6
         },
+        "activeTool": "directions",
         "esriApiKey": "AAPK76c74716cd3a48e8890531e85899d7e5PgPuOwAWPdP5X5IeNFaf26eMbjVTlVlWQiE24Uc8uf-wzHUyC8Ux2UoZut_js5xV",
         "baseMap": "Streets"
     },
@@ -104,7 +105,7 @@
                 "stroke": true,
                 "marker": true,
                 "markerUrl": null
-            }, 
+            },
             "conditionalStyles": [
                 {
                     "property": "Stall_Type",
@@ -595,7 +596,7 @@
             "useClustering": false,
             "dataUrl": "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=on232zJ8pxzqnErmjt4JN4WckYBuTA0u5kYvh9yH&access=public&fuel_type=ELEC&country=CA&state=BC&status=E",
             "legend": {
-                "point": true, 
+                "point": true,
                 "otherLegendLabelOverride": "Charging Stations"
             },
             "style": {
@@ -741,17 +742,12 @@
             "enabled": false
         },
         {
-            "type": "directions",
             "order": 1,
-            "enabled": true,
-            "command": {
-                "optimal": false,
-                "vehicleType": false
-            },
-            "criteria": "fastest",
-            "routePlannerService": {
-                "url": "https://router.api.gov.bc.ca/"
-            },
+            "position": [
+                "list-menu"
+            ],
+            "icon": "directions_car",
+            "title": "Route Planner",
             "geocoderService": {
                 "url": "https://geocoder.api.gov.bc.ca/",
                 "parameter": {
@@ -761,7 +757,25 @@
                     "minScore": 50,
                     "echo": true
                 }
-            }
+            },
+            "routePlannerService": {
+                "url": "https://router.api.gov.bc.ca/"
+            },
+            "optimal": false,
+            "roundTrip": false,
+            "criteria": "fastest",
+            "truck": false,
+            "truckRoute": null,
+            "truckHeight": null,
+            "truckWidth": null,
+            "truckLength": null,
+            "truckWeight": null,
+            "command": {
+                "optimal": false,
+                "vehicleType": false
+            },
+            "type": "directions",
+            "enabled": true
         },
         {
             "type": "location",
