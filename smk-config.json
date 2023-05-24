@@ -637,7 +637,7 @@
         {
             "type": "list-menu",
             "enabled": true,
-            "title": "Clean BC"
+            "title": "CleanBC"
         },
         {
             "type": "pan",
@@ -651,7 +651,7 @@
             "order": 10,
             "position": "list-menu",
             "icon": "help",
-            "title": "About Clean BC",
+            "title": "About CleanBC",
             "content": "<p>The CleanBC Route Planner (CBRP) is intended to be an interactive, easy-to-understand trip-planning application for Fleet Vehicles within RPD. The web application's key features are the ability to see RPD properties and Ministry Electric Vehicle Charging Stations (EVCS), along with public charging stations and to plan your route accordingly. It is intended to augment, rather than replace, existing regional and municipal maps and trip planning tools.</p>",
             "type": "about",
             "enabled": true
