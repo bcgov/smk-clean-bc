@@ -81,7 +81,7 @@ objects:
       generation: 10
       labels:
         app: ${APP_NAME}-${ENV}
-      name: ${APP_NAME}-${ENV}-dc
+      name: ${APP_NAME}-${ENV}-dp
     spec:
       progressDeadlineSeconds: 600
       replicas: 2
