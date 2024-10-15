@@ -83,4 +83,4 @@ jobs:
         curdir=$(pwd)
         PATH=$curdir:$PATH
         oc login --token=$OPENSHIFT_TOKEN_DEV --server=$OPENSHIFT_SERVER_URL
-        oc patch dc smk-clean-bc-dc -p '[{"op":"add","path":"/spec/template/spec/containers/0/volumeMounts","value":[{"name":"config-volume","mountPath":"/srv/config"}]},{"op":"add","path":"/spec/template/spec/columes","value":{"name":"config-volume","configMap":{"name":"smk-clean-bc-dev-api-key","items":[{"key":"api-key","path":"route-planner.json"}]}}}]' --type json
+        oc patch deployment smk-clean-bc-dp -p '[{"op":"add","path":"/spec/template/spec/containers/0/volumeMounts","value":[{"name":"config-volume","mountPath":"/srv/config"}]},{"op":"add","path":"/spec/template/spec/columes","value":{"name":"config-volume","configMap":{"name":"smk-clean-bc-dev-api-key","items":[{"key":"api-key","path":"route-planner.json"}]}}}]' --type json
