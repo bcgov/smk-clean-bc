@@ -1,6 +1,6 @@
 # stage 1: use npm to install dependencies into node_modules 
 #          directory
-FROM node:alpine3.12 AS BUILD_IMAGE
+FROM node:alpine3.20 AS BUILD_IMAGE
 
 #RUN ls -la / &&  ls -la /srv && mkdir /srv
 WORKDIR /srv
@@ -15,7 +15,7 @@ RUN npm install && npm uninstall http-server
 # stage 2: don't need node itself, just need the acutal js files that
 #          it insalled. This stage builds from caddy and copied the 
 #          dependencies from previous stage
-FROM caddy:2.1.1-alpine
+FROM caddy:2.8.4-alpine
 WORKDIR /srv
 
 # needed assets needs to be copied as a directory, don't see a way 
