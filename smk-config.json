@@ -16,7 +16,7 @@
             "zoom": 6
         },
         "activeTool": "directions",
-        "esriApiKey": "AAPTxy8BH1VEsoebNVZXo8HurGGT_aCYgwCokRuPIAG5xSNnNO58rKA8quLp4cMJzV5z2dxoTQzu-F4XzfPQTILhnVYK_f-7sqXaYKLStGSo7wzcGZd9bx7Ks2K-27aUHuS7bgxenLT9BdtlxwFluidd5hFIV_nwIB3VhOrx7jakwd9KEOctrZJRTEzzhoXmzQn5DxmEIXlBNpnAibwLlWT2LoSkBLCNNwNjKVbvgnhVERY.AT1_uUO3yFk9",
+        "esriApiKey": "ESRI_API_KEY",
         "baseMap": "Streets"
     },
     "layers": [
