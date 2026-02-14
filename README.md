@@ -11,11 +11,10 @@ The CleanBC Fleet Route Planner is an easy-to-use web-based map interface design
 - **Interactive Map Interface**: Zoom and pan across British Columbia to explore EV charging stations and government facilities
 - **Route Planning**: Plan optimal or fastest routes with:
   - Turn-by-turn directions
-  - Range-based planning and charging stop recommendations
   - Print-friendly route instructions
 - **Charging Station Data**: View locations and details for:
-  - Government charging stations (EVCS)
-  - Public EV charging stations across BC with real-time information
+  - Government charging stations 
+  - Public EV charging stations across BC 
 - **Address Search**: Find locations using BC Geocoder integration
 - **Dynamic Layers**: Toggle visibility of charging stations and government buildings
 - **Responsive Design**: Works on desktop and mobile devices
