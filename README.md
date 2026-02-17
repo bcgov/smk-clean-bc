@@ -74,7 +74,6 @@ The application is configured through `smk-config.json`, which defines:
 
 - **[SMK (Simple Map Kit)](https://github.com/bcgov/smk)**: BC Government's map framework
 - **[Leaflet](https://leafletjs.com/)**: Open-source mapping library
-- **[GeoJSON](https://geojson.org/)**: Geographic data format
 - **[Caddy](https://caddyserver.com/)**: Lightweight web server
 - **[Node.js](https://nodejs.org/)**: JavaScript runtime
 
